@@ -1,0 +1,91 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Bannière */
+.banner {
+    width: 100%;
+    background: linear-gradient(135deg, #007bff, #6610f2);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Conteneur principal */
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 20px auto;
+    gap: 20px;
+}
+
+/* Sections */
+.tests, .inputs {
+    flex: 1;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style des inputs et checkbox */
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.tests label {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* Bouton */
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Bouton bleu */
+button:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Résultats */
+.results {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.full-results-btn {
+    background: #28a745;
+    color: white;
+    font-size: 18px;
+}
+
+.full-results-btn:hover {
+    background: #218838;
+}
