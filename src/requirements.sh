@@ -1,4 +1,13 @@
-sudo apt-get update && sudo apt-get install -y \
+#!/bin/bash
+
+sudo add-apt-repository universe -y
+sudo add-apt-repository multiverse -y
+
+sudo add-apt-repository ppa:ondrej/php -y
+
+sudo apt-get update
+
+sudo apt-get install -y \
     nmap \
     traceroute \
     whois \
@@ -14,7 +23,7 @@ sudo apt-get update && sudo apt-get install -y \
     python3-pip \
     golang-go \
     libfreetype6-dev \
-    libjpeg62-turbo-dev \
+    libjpeg-dev \
     libpng-dev \
     libxml2-dev \
     libzip-dev \
