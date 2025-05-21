@@ -6,7 +6,7 @@ La Toolbox de Sécurité est un ensemble complet d'outils d'analyse de sécurit�
 
 ## Fonctionnalités
 
-- **Tests Réseau de Base**
+- **Tests Réseau**
   - **Ping** : Vérifie si une cible est accessible sur le réseau.
   - **Traceroute** : Trace le chemin des paquets vers une cible spécifique.
 
@@ -30,8 +30,8 @@ La Toolbox de Sécurité est un ensemble complet d'outils d'analyse de sécurit�
 
 ## Prérequis
 
-- PHP 7.4 ou supérieur
-- Serveur web (Apache, Nginx, etc.)
+- PHP 7.4
+- Serveur web (Apache, Nginx)
 - Accès en ligne de commande aux outils suivants :
   - ping, traceroute
   - nmap
