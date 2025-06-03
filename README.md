@@ -4,8 +4,18 @@
 
 La Toolbox de Sécurité est un ensemble complet d'outils d'analyse de sécurité conçu pour vous assister dans la réalisation de divers audits de sécurité. Elle inclut des fonctionnalités telles que les tests réseau (ping, traceroute), l'analyse de ports avec Nmap, les scans de vulnérabilités web avec Nikto, l'énumération de répertoires avec Dirb, ainsi que des scans spécifiques utilisant des outils comme Whois, Dig, SSLScan, Nuclei, Subfinder et WhatWeb.
 
-## Fonctionnalités
+## Fonctionnalités clés
 
+- 👀 **Reconnaissance**: Exploration des systèmes cibles pour collecter des informations initiales sur les cibles potentielles.
+
+- 🔍 **Scanning**: Analyse des systèmes pour identifier les ports ouverts, les services en cours d'exécution et les vulnérabilités connues.
+
+- 💪 **Exploitation**: Utilisation des vulnérabilités détectées pour accéder aux systèmes cibles et obtenir un accès non autorisé.
+
+- 📄 **Reporting**: Génération de rapports détaillés pour documenter les résultats des tests de pénétration.
+
+## Fonctionnalités avancées
+ 
 - **Tests Réseau**
   - **Ping** : Vérifie si une cible est accessible sur le réseau.
   - **Traceroute** : Trace le chemin des paquets vers une cible spécifique.
