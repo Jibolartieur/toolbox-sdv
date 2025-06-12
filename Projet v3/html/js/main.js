@@ -189,14 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     target = url;
                 }
             
-                // Gobuster est géré séparément
-                if (tool === 'gobuster') {
-                    runGobuster(target);
-                    return {
-                        tool: tool,
-                        output: '[Gobuster lancé séparément avec interface dédiée.]'
-                    };
-                }
+                
             
                 const response = await fetch('php/execute.php', {
                     method: 'POST',
@@ -208,16 +201,38 @@ document.addEventListener('DOMContentLoaded', () => {
                         target: target
                     })
                 });
-            
+                
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
-            
+                
+                // ======= Ici, il manque cette ligne =======
                 const result = await response.json();
-                return {
-                    tool: tool,
-                    output: result.output
-                };
+                
+                if (tool === 'gobuster') {
+                    // Nettoyage des séquences d'effacement et des couleurs ANSI
+                    let cleanOutput = result.output.replace(/\[\d+K/g, '');
+                    cleanOutput = cleanOutput.replace(/\x1b\[[0-9;]*m/g, '');
+                    
+                    // Ligne de commande affichée en entête
+                    const commandLine = `gobuster dir -u ${target} -w /usr/share/dirb/wordlists/common.txt -q`;
+                    
+                    // Mettre chaque résultat sur une nouvelle ligne
+                    cleanOutput = cleanOutput.replace(/\]\[/g, ']\n');
+                    
+                    return {
+                        tool: tool,
+                        output: `${commandLine}\n${cleanOutput}`
+                    };
+                    
+                } else {
+                    return {
+                        tool: tool,
+                        output: result.output
+                    };
+                }
+                
+                
             });
             
 
@@ -292,94 +307,13 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => console.error('Error generating report:', error));
     }
 
-    function closeGobusterModal() {
-        const modal = document.getElementById('gobuster-modal');
-        if (modal) {
-            modal.style.display = 'none';
+
+    function displayResults(tool, target, output) {
+        const resultsContainer = document.getElementById('results-output');
+        if (resultsContainer) {
+            resultsContainer.innerHTML = `<pre><strong>=== ${tool.toUpperCase()} Results for ${target} ===</strong>\n${output}</pre>` + resultsContainer.innerHTML;
         }
     }
+
     
-
-    if (!document.getElementById('gobuster-modal')) {
-        const modal = document.createElement('div');
-        modal.id = 'gobuster-modal';
-        modal.style.position = 'fixed';
-        modal.style.top = '0';
-        modal.style.left = '0';
-        modal.style.width = '100%';
-        modal.style.height = '100%';
-        modal.style.backgroundColor = 'rgba(0,0,0,0.7)';
-        modal.style.display = 'none';
-        modal.style.justifyContent = 'center';
-        modal.style.alignItems = 'center';
-        modal.style.zIndex = '9999';
-        
-        modal.innerHTML = `
-          <div style="background: #fff; padding: 20px; border-radius: 8px; width: 300px; text-align: center;">
-            <h2>Gobuster scan en cours...</h2>
-            <button id="cancel-gobuster" style="padding: 10px 20px; margin-top: 15px;">Annuler le scan</button>
-          </div>
-        `;
-        
-        document.body.appendChild(modal);
-      }
-      
-
-    let gobusterController = null;
-
-    function runGobuster(target) {
-        const modal = document.getElementById('gobuster-modal');
-    
-        if (modal) {
-            modal.style.display = 'flex'; // Ouvre la popup dès que le scan commence
-        } else {
-            console.error("Modal introuvable !");
-        }
-    
-        fetch('scripts/run_gobuster.php?target=' + encodeURIComponent(target))
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    displayResults('Gobuster', target, data.results.join('\n'));
-                } else {
-                    displayResults('Gobuster', target, 'Erreur: ' + data.error + '\n' + (data.raw || ''));
-                }
-            })
-            .catch(err => {
-                displayResults('Gobuster', target, 'Erreur lors du lancement de Gobuster');
-            })
-            .finally(() => {
-                if (modal) modal.style.display = 'none'; // Ferme la popup à la fin
-            });
-    
-        // Gestion du bouton "Cancel"
-        const cancelBtn = document.getElementById('cancel-gobuster');
-        if (cancelBtn) {
-            cancelBtn.onclick = () => {
-                // Affiche un message d'annulation (car pas d'annulation réelle possible en PHP)
-                displayResults('Gobuster', target, 'Scan annulé par l’utilisateur.');
-                modal.style.display = 'none';
-            };
-        }
-    }
-    
-    
-    
-
-document.getElementById('cancel-gobuster').addEventListener('click', () => {
-    if (gobusterController) {
-        gobusterController.abort();
-    }
-
-    // Ferme la popup manuellement
-    const modal = document.getElementById('gobuster-modal');
-    closeGobusterModal();
-
-
-    // ide le contenu temporaire (optionnel)
-    document.getElementById('results-output').innerHTML =
-        `<pre><strong>=== GOBUSTER Results ===</strong>\n[Analyse annulée]</pre>` + document.getElementById('results-output').innerHTML;
-});
-
-
 });

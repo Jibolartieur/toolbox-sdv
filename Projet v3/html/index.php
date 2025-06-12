@@ -232,6 +232,7 @@ requireLogin();
     <h3>Gobuster is scanning…</h3>
     <p>This may take a while. Please wait.</p>
     <button id="cancel-gobuster">Cancel Scan</button>
+    <button id="generate-docx-btn" class="run-scan-btn">Generate DOCX Report</button>
   </div>
 </div>
 
