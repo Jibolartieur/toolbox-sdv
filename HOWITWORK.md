@@ -1,8 +1,10 @@
 # 🔒 Explication du Code de la Toolbox de Sécurité
 
+
 ## 🔍 Aperçu
 
 La Toolbox de Sécurité est un ensemble complet d'outils d'analyse de sécurité conçu pour vous assister dans la réalisation de divers audits de sécurité. Elle inclut des fonctionnalités telles que le ping, traceroute, l'analyse de ports avec Nmap, les scans web avec Nikto, l'énumération de répertoires avec Dirb, ainsi que des scans spécifiques en utilisant Whois, Dig, SSLScan, Nuclei, Subfinder et WhatWeb.
+
 
 ## 🔐 Vérification de la session utilisateur
 
@@ -20,6 +22,7 @@ if (!isLoggedIn()) {
 ```
 
 Cela évite que n’importe qui puisse exécuter des commandes sur le serveur sans être authentifié.
+
 
 ## 🛡 Sécurisation des entrées
 
@@ -40,6 +43,7 @@ $target = escapeshellarg($input['target']);
 ```
 
 Utiliser escapeshellarg() permet de se protéger des injections de commandes dans les arguments passés au terminal.
+
 
 ## ✅ Liste blanche des outils autorisés
 
@@ -110,6 +114,7 @@ $allowed_tools = [
 
 Cela permet de contrôler précisément ce qui peut être exécuté et comment.
 
+
 ## ⚙️ Construction et exécution de la commande
 
 Une fois la commande générée, le script vérifie si elle existe, l’exécute et récupère le résultat en nettoyant les caractères indésirables :
@@ -123,6 +128,7 @@ $formatted_output = preg_replace('/[\x00-\x1F\x7F]/u', '', $formatted_output);
 
 Tous les caractères invalides sont supprimés pour éviter des problèmes d’encodage côté interface ou lors de l’enregistrement.
 
+
 ## 🧾 Sauvegarde des résultats en base de données
 
 Chaque résultat est stocké en base dans la table scan_results avec l’ID utilisateur, l’outil utilisé, la cible et le résultat brut.
@@ -133,6 +139,7 @@ $stmt->execute([$_SESSION['user_id'], $tool, trim($target, "'"), $formatted_outp
 ```
 
 Cela permet de conserver l’historique des scans et de générer des rapports par la suite.
+
 
 ## 📤 Réponse JSON vers le frontend
 
@@ -148,6 +155,7 @@ $response = [
 echo json_encode($response, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 ```
 
+
 ## 🧯 Gestion des erreurs
 
 Tout au long du script, les erreurs sont loggées dans un fichier (php_errors.log) pour faciliter le débogage.
@@ -162,6 +170,7 @@ echo json_encode([
 ```
 
 Cela garantit que même en cas de problème, l’application ne plante pas et reste sécurisée.
+
 
 ## 🔁 Conclusion
 
