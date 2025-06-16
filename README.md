@@ -40,10 +40,11 @@ La Toolbox de Sécurité est un ensemble complet d'outils d'analyse de sécurit�
 
 ## Prérequis
 
-- PHP 7.4
-- Serveur web (Apache, Nginx)
+- Une machine Linux (Debian 12 recommandé)
+- Apache
+- PHP 8.3
+- MariaDB
 - Accès en ligne de commande aux outils suivants :
-  - ping, traceroute
   - nmap
   - nikto
   - dirb
@@ -59,9 +60,28 @@ La Toolbox de Sécurité est un ensemble complet d'outils d'analyse de sécurit�
 
 1. Clonez ce dépôt sur votre serveur web :
    ```
-   git clone https://github.com/Jibolartieur/toolbox-sdv//toolbox-sdv.git
+   sudo git clone https://github.com/Jibolartieur/toolbox-sdv.git 
+   ```
+2. Installer les dépendances requises :
+   ```
+   sudo apt install -y apache2 php php-mysql libapache2-mod-php mariadb-
+   server mariadb-client git unzip curl
    ```
 
+## Utilisation
+
+1. Accéder à l’interface web :
+   Ouvrir votre navigateur et allez à : http://localhost/login.php
+
+3. Effectuez un Scan :
+   Entrez l'IP ou domaine ciblé
+   Sélectionnez les options de scan souhaitées
+   Cliquez sur "Lancer le scan" pour démarrer le scan
+
+4. Télécharger le Rapport :
+   Après la fin du scan, vous pouvez télécharger le rapport au format PDF
+
+   
 ## Sécurité
 
 Cette toolbox est conçue pour des tests de sécurité légitimes. Assurez-vous de :
