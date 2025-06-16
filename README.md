@@ -71,7 +71,7 @@ La Toolbox de Sécurité est un ensemble complet d'outils d'analyse de sécurit�
 ## Utilisation
 
 1. Accéder à l’interface web :
-   Ouvrir votre navigateur et allez à : http://localhost/login.php
+   - **Ouvrir votre navigateur et allez à : http://localhost/login.php**
 
 3. Effectuez un Scan :
    Entrez l'IP ou domaine ciblé
