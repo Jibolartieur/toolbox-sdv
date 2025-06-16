@@ -97,4 +97,4 @@ Ce projet est sous licence MIT. Voir le fichier License pour plus d'informations
 ## Contact
 
 Pour toute question ou assistance, veuillez contacter :
-[matthis.graveleau@supdevinci-edu.fr, Nathan.michamble@supdevinci-edu.fr ou hasnat.shamraiz-iqbal@supdevinci-edu.fr]
+[matthis.graveleau@supdevinci-edu.fr, nathan.michamble@supdevinci-edu.fr ou hasnat.shamraiz-iqbal@supdevinci-edu.fr]
