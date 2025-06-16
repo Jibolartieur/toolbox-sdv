@@ -4,23 +4,30 @@
 
 La Toolbox de Sécurité est un ensemble complet d'outils d'analyse de sécurité conçu pour vous assister dans la réalisation de divers audits de sécurité. Elle inclut des fonctionnalités telles que le ping, traceroute, l'analyse de ports avec Nmap, les scans web avec Nikto, l'énumération de répertoires avec Dirb, ainsi que des scans spécifiques en utilisant Whois, Dig, SSLScan, Nuclei, Subfinder et WhatWeb.
 
-## 💻 Détails du Code
+## 🔐 Vérification de la session utilisateur
 
-**Configuration Initiale**
+Dès le début, le script vérifie que l’utilisateur est bien connecté à sa session. Sinon, il renvoie une erreur 401 :
+
 ```php
-<?php
-header('Content-Type: application/json');
+session_start();
+require_once 'config.php';
 
-// Enable error reporting for debugging
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+if (!isLoggedIn()) {
+    http_response_code(401);
+    echo json_encode(['error' => 'Non autorisé']);
+    exit;
+}
 ```
-Cette section configure l'en-tête de la réponse en JSON et active les rapports d'erreurs pour faciliter le débogage.
 
-**Traitement des Entrées**
+Cela évite que n’importe qui puisse exécuter des commandes sur le serveur sans être authentifié.
+
+## 🛡 Sécurisation des entrées
+
+Le script reçoit les données JSON envoyées par l’interface (outil + cible) et les vérifie avant de les utiliser.
+
 ```php
-// Validate and sanitize input
-$input = json_decode(file_get_contents('php://input'), true);
+$raw_input = file_get_contents('php://input');
+$input = json_decode($raw_input, true);
 
 if (!isset($input['tool']) || !isset($input['target'])) {
     http_response_code(400);
@@ -31,61 +38,61 @@ if (!isset($input['tool']) || !isset($input['target'])) {
 $tool = strtolower($input['tool']);
 $target = escapeshellarg($input['target']);
 ```
-Cette partie récupère et valide les données d'entrée. Elle vérifie que les paramètres requis (tool et target) sont présents et sécurise la cible contre les injections de commandes en utilisant escapeshellarg().
 
-**Définition des Outils de Base**
+Utiliser escapeshellarg() permet de se protéger des injections de commandes dans les arguments passés au terminal.
+
+## ✅ Liste blanche des outils autorisés
+
+Pour éviter tout abus, seule une liste précise d’outils peut être utilisée. Chaque outil correspond à une fonction qui génère sa commande.
+
 ```php
-// Whitelist of allowed tools and their commands
 $allowed_tools = [
-    // Outils de base
+    // Outils réseau de base
     'ping' => function($target) {
         return "ping -c 4 {$target}";
     },
     'traceroute' => function($target) {
         return "traceroute {$target}";
     },
-```
-Cette section définit les outils de base pour les tests réseau. Le ping permet de vérifier si une cible est accessible, tandis que traceroute trace le chemin des paquets vers cette cible.
 
-**Outils d'Énumération**
-```php
-    // Outils d'énumération
+    // Scanners réseau
     'nmap' => function($target) {
         return "nmap -sV -p- -T4 --min-rate 1000 {$target}";
     },
     'nikto' => function($target) {
         return "nikto -h {$target} -Format txt";
     },
-```
-Ces fonctions permettent l'utilisation de Nmap pour la découverte de ports et services (-sV pour la détection de version, -p- pour scanner tous les ports) et Nikto pour la détection de vulnérabilités sur des serveurs web.
 
-**Outils Web**
-```php
-    // Outils Web
-    'dirb' => function($target) {
-        return "dirb {$target} /usr/share/dirb/wordlists/common.txt -w";
+    // Fuzzing de répertoires
+    'gobuster' => function($target) {
+        return "gobuster dir -u {$target} -w /usr/share/dirb/wordlists/common.txt -q";
     },
+
+    // Requête vers une API externe
     'webcheck' => function($target) {
         return "curl -s 'https://web-check.xyz/api/check?url={$target}'";
     },
-```
-Ces outils permettent l'énumération de répertoires web avec Dirb (utilisant le dictionnaire common.txt) et la vérification générale de sites web via l'API web-check.xyz.
 
-**Outils d'Information**
-```php
-    // Outils d'information
+    // Informations sur l'infrastructure
     'whois' => function($target) {
+        $target = trim($target, "'");
+        if (filter_var($target, FILTER_VALIDATE_IP)) {
+            return "whois -h whois.arin.net {$target}";
+        }
+        if (preg_match('/^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.[a-zA-Z]{2,}$/', $target)) {
+            return "whois {$target}";
+        }
+        if (preg_match('/^(?:https?:\/\/)?([^\/]+)/', $target, $matches)) {
+            return "whois " . $matches[1];
+        }
         return "whois {$target}";
     },
+
     'dig' => function($target) {
         return "dig +nocmd {$target} ANY +noall +answer";
     },
-```
-Ces fonctions permettent d'obtenir des informations sur les domaines (propriétaire, contacts, etc.) et leurs enregistrements DNS (tous types d'enregistrements).
 
-**Outils de Sécurité Supplémentaires**
-```php
-    // Outils de sécurité supplémentaires
+    // Outils de sécurité
     'sslscan' => function($target) {
         return "sslscan --no-colour {$target}";
     },
@@ -100,46 +107,62 @@ Ces fonctions permettent d'obtenir des informations sur les domaines (propriéta
     }
 ];
 ```
-Ces outils offrent des scans de sécurité plus avancés comme l'analyse des configurations SSL, la détection de vulnérabilités avec Nuclei (en mode silencieux), la découverte de sous-domaines et l'identification des technologies web utilisées (avec un niveau d'agressivité 3).
 
-**Validation de l'Outil Demandé**
-```php
-// Validate tool
-if (!array_key_exists($tool, $allowed_tools)) {
-    http_response_code(400);
-    echo json_encode(['error' => 'Invalid tool specified']);
-    exit;
-}
-```
-Cette fonction vérifie si l'outil demandé est présent dans la liste blanche des outils autorisés. Si ce n'est pas le cas, elle renvoie une erreur 400.
+Cela permet de contrôler précisément ce qui peut être exécuté et comment.
 
-**Exécution de la Commande et Récupération des Résultats**
+## ⚙️ Construction et exécution de la commande
+
+Une fois la commande générée, le script vérifie si elle existe, l’exécute et récupère le résultat en nettoyant les caractères indésirables :
+
 ```php
-// Build and execute command
-try {
-    $command = $allowed_tools[$tool]($target);
-    
-    // Execute command and capture output
-    $output = [];
-    $return_var = 0;
-    exec($command . " 2>&1", $output, $return_var);
-    
-    // Format output
-    $formatted_output = implode("\n", $output);
-    
-    // Return results
-    echo json_encode([
-        'success' => true,
-        'output' => $formatted_output,
-        'return_code' => $return_var
-    ]);
-    
-} catch (Exception $e) {
-    http_response_code(500);
-    echo json_encode([
-        'error' => 'Command execution failed',
-        'message' => $e->getMessage()
-    ]);
-}
+$command = $allowed_tools[$tool]($target);
+exec($command . " 2>&1", $output, $return_var);
+$formatted_output = implode("\n", $output);
+$formatted_output = preg_replace('/[\x00-\x1F\x7F]/u', '', $formatted_output);
 ```
-Cette section construit la commande en utilisant la fonction associée à l'outil sélectionné, l'exécute via exec() et capture sa sortie. Elle redirige également les erreurs (2>&1) vers la sortie standard pour les capturer. Les résultats sont ensuite formatés en JSON avec un indicateur de succès, la sortie de la commande et son code de retour. En cas d'erreur, elle renvoie un message d'erreur formaté.
+
+Tous les caractères invalides sont supprimés pour éviter des problèmes d’encodage côté interface ou lors de l’enregistrement.
+
+## 🧾 Sauvegarde des résultats en base de données
+
+Chaque résultat est stocké en base dans la table scan_results avec l’ID utilisateur, l’outil utilisé, la cible et le résultat brut.
+
+```php
+$stmt = $pdo->prepare('INSERT INTO scan_results (user_id, tool_name, target, output) VALUES (?, ?, ?, ?)');
+$stmt->execute([$_SESSION['user_id'], $tool, trim($target, "'"), $formatted_output]);
+```
+
+Cela permet de conserver l’historique des scans et de générer des rapports par la suite.
+
+## 📤 Réponse JSON vers le frontend
+
+Le script envoie ensuite une réponse JSON formatée, contenant le résultat brut du scan :
+
+```php
+$response = [
+    'success' => true,
+    'output' => $formatted_output,
+    'return_code' => $return_var
+];
+
+echo json_encode($response, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+```
+
+## 🧯 Gestion des erreurs
+
+Tout au long du script, les erreurs sont loggées dans un fichier (php_errors.log) pour faciliter le débogage.
+
+```php
+error_log("Exception caught: " . $e->getMessage());
+http_response_code(500);
+echo json_encode([
+    'error' => 'Command execution failed',
+    'message' => $e->getMessage()
+]);
+```
+
+Cela garantit que même en cas de problème, l’application ne plante pas et reste sécurisée.
+
+## 🔁 Conclusion
+
+Le script execute.php est la pièce centrale de la toolbox. Il permet d’exécuter les outils de cybersécurité de manière sécurisée, automatisée et fiable tout en assurant une traçabilité des actions via la base de données et les logs. Grâce à sa structure modulaire, il est aussi facile d’y ajouter de nouveaux outils à l’avenir.
