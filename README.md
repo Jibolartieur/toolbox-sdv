@@ -93,3 +93,8 @@ Cette toolbox est conçue pour des tests de sécurité légitimes. Assurez-vous 
 ## Licence
 
 Ce projet est sous licence MIT. Voir le fichier License pour plus d'informations. 
+
+## Contact
+
+Pour toute question ou assistance, veuillez contacter :
+[matthis.graveleau@supdevinci-edu.fr, Nathan.michamble@supdevinci-edu.fr ou hasnat.shamraiz-iqbal@supdevinci-edu.fr]
