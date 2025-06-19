@@ -1,787 +1,0 @@
-[17-Jun-2025 17:01:44 UTC] Script started
-[17-Jun-2025 17:01:44 UTC] Raw input: {"tool":"nuclei","target":"https://cyna-it.fr/"}
-[17-Jun-2025 17:01:44 UTC] Executing command: nuclei -u 'https://cyna-it.fr/' --stats
-[17-Jun-2025 17:01:44 UTC] Command not found: nuclei
-[17-Jun-2025 17:01:44 UTC] Exception caught: Command not found: nuclei
-[17-Jun-2025 17:49:29 UTC] Script started
-[17-Jun-2025 17:49:29 UTC] Raw input: {"tool":"gobuster","target":"https://cyna-it.fr/"}
-[17-Jun-2025 17:49:29 UTC] Executing command: gobuster dir -u 'https://cyna-it.fr/' -w /usr/share/dirb/wordlists/common.txt -q
-[17-Jun-2025 17:49:34 UTC] Command return code: 1
-[17-Jun-2025 17:49:34 UTC] Command output: Array
-(
-    [0] => Error: the server returns a status code that matches the provided options for non existing urls. https://cyna-it.fr/5d624c81-acd8-4278-b367-3a19c540d662 => 429 (Length: 1168). To continue please exclude the status code or the length
-)
-
-[17-Jun-2025 17:49:47 UTC] Script started
-[17-Jun-2025 17:49:47 UTC] Raw input: {"tool":"gobuster","target":"cyna-it.fr"}
-[17-Jun-2025 17:49:47 UTC] Executing command: gobuster dir -u 'cyna-it.fr' -w /usr/share/dirb/wordlists/common.txt -q
-[17-Jun-2025 17:49:47 UTC] Command return code: 1
-[17-Jun-2025 17:49:47 UTC] Command output: Array
-(
-    [0] => Error: the server returns a status code that matches the provided options for non existing urls. http://cyna-it.fr/7d927503-f3cf-4827-8591-b61df2deaf5e => 301 (Length: 162). To continue please exclude the status code or the length
-)
-
-[17-Jun-2025 17:51:45 UTC] Script started
-[17-Jun-2025 17:51:45 UTC] Raw input: {"tool":"whois","target":"cyna-it.fr"}
-[17-Jun-2025 17:51:45 UTC] Executing command: whois cyna-it.fr
-[17-Jun-2025 17:51:45 UTC] Command return code: 0
-[17-Jun-2025 17:51:45 UTC] Command output: Array
-(
-    [0] => %%
-    [1] => %% This is the AFNIC Whois server.
-    [2] => %%
-    [3] => %% complete date format: YYYY-MM-DDThh:mm:ssZ
-    [4] => %%
-    [5] => %% Rights restricted by copyright.
-    [6] => %% See https://www.afnic.fr/en/domain-names-and-support/everything-there-is-to-know-about-domain-names/find-a-domain-name-or-a-holder-using-whois/
-    [7] => %%
-    [8] => %%
-    [9] => 
-    [10] => domain:                        cyna-it.fr
-    [11] => status:                        ACTIVE
-    [12] => eppstatus:                     active
-    [13] => hold:                          NO
-    [14] => holder-c:                      ANO00-FRNIC
-    [15] => admin-c:                       O2798-FRNIC
-    [16] => tech-c:                        O2798-FRNIC
-    [17] => registrar:                     SCALEWAY
-    [18] => Expiry Date:                   2026-09-11T09:39:54Z
-    [19] => created:                       2021-09-11T09:39:54Z
-    [20] => last-update:                   2025-02-05T18:52:48.392681Z
-    [21] => source:                        FRNIC
-    [22] => 
-    [23] => nserver:                       dns101.ovh.net
-    [24] => nserver:                       ns101.ovh.net
-    [25] => source:                        FRNIC
-    [26] => 
-    [27] => registrar:                     SCALEWAY
-    [28] => address:                       8, rue de la ville l'Eveque
-    [29] => address:                       75008 PARIS
-    [30] => country:                       FR
-    [31] => phone:                         +33.184130069
-    [32] => fax-no:                        +33.173502901
-    [33] => e-mail:                        frnic-admin@free.org
-    [34] => website:                       https://www.bookmyname.com
-    [35] => anonymous:                     No
-    [36] => registered:                    1999-03-29T00:00:00Z
-    [37] => source:                        FRNIC
-    [38] => 
-    [39] => nic-hdl:                       ANO00-FRNIC
-    [40] => type:                          PERSON
-    [41] => contact:                       Ano Nymous
-    [42] => registrar:                     SCALEWAY
-    [43] => changed:                       2025-03-17T22:11:58.418889Z
-    [44] => anonymous:                     YES
-    [45] => remarks:                       -------------- WARNING --------------
-    [46] => remarks:                       While the registrar knows him/her,
-    [47] => remarks:                       this person chose to restrict access
-    [48] => remarks:                       to his/her personal data. So PLEASE,
-    [49] => remarks:                       don't send emails to Ano Nymous. This
-    [50] => remarks:                       address is bogus and there is no hope
-    [51] => remarks:                       of a reply.
-    [52] => remarks:                       -------------- WARNING --------------
-    [53] => obsoleted:                     NO
-    [54] => eppstatus:                     associated
-    [55] => eppstatus:                     active
-    [56] => eligstatus:                    not identified
-    [57] => reachstatus:                   ok
-    [58] => reachmedia:                    email
-    [59] => reachsource:                   REGISTRAR
-    [60] => reachdate:                     2025-03-17T22:11:58.41889Z
-    [61] => source:                        FRNIC
-    [62] => 
-    [63] => nic-hdl:                       O2798-FRNIC
-    [64] => type:                          ORGANIZATION
-    [65] => contact:                       O2SWITCH
-    [66] => address:                       Chemin des Pardiaux
-    [67] => address:                       63000 CLERMONT FERRAND
-    [68] => country:                       FR
-    [69] => phone:                         +33.444446040
-    [70] => fax-no:                        +33.444446041
-    [71] => e-mail:                        dns-nospam@o2switch.fr
-    [72] => registrar:                     SCALEWAY
-    [73] => changed:                       2025-06-10T12:46:59.851973Z
-    [74] => anonymous:                     NO
-    [75] => obsoleted:                     NO
-    [76] => eppstatus:                     associated
-    [77] => eppstatus:                     active
-    [78] => eligstatus:                    not identified
-    [79] => reachstatus:                   not identified
-    [80] => source:                        FRNIC
-    [81] => 
-    [82] => >>> Last update of WHOIS database: 2025-06-17T17:51:45.933639Z <<<
-    [83] => 
-)
-
-[17-Jun-2025 17:52:35 UTC] Script started
-[17-Jun-2025 17:52:35 UTC] Raw input: {"tool":"nmap","target":"https://cyna-it.fr/"}
-[17-Jun-2025 17:52:35 UTC] Executing command: nmap -sV -p- -T4 --min-rate 1000 'cyna-it.fr'
-[17-Jun-2025 17:55:03 UTC] Command return code: 0
-[17-Jun-2025 17:55:03 UTC] Command output: Array
-(
-    [0] => Starting Nmap 7.93 ( https://nmap.org ) at 2025-06-17 19:52 CEST
-    [1] => Nmap scan report for cyna-it.fr (192.0.78.136)
-    [2] => Host is up (0.049s latency).
-    [3] => Other addresses for cyna-it.fr (not scanned): 192.0.78.235
-    [4] => Not shown: 65508 filtered tcp ports (no-response), 25 filtered tcp ports (host-unreach)
-    [5] => PORT    STATE SERVICE  VERSION
-    [6] => 80/tcp  open  http     nginx
-    [7] => 443/tcp open  ssl/http nginx
-    [8] => 
-    [9] => Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-    [10] => Nmap done: 1 IP address (1 host up) scanned in 147.97 seconds
-)
-
-[17-Jun-2025 17:55:36 UTC] Script started
-[17-Jun-2025 17:55:36 UTC] Raw input: {"tool":"nmap","target":"https://localhost/"}
-[17-Jun-2025 17:55:36 UTC] Executing command: nmap -sV -p- -T4 --min-rate 1000 'localhost'
-[17-Jun-2025 17:55:50 UTC] Command return code: 0
-[17-Jun-2025 17:55:50 UTC] Command output: Array
-(
-    [0] => Starting Nmap 7.93 ( https://nmap.org ) at 2025-06-17 19:55 CEST
-    [1] => Nmap scan report for localhost (127.0.0.1)
-    [2] => Host is up (0.000093s latency).
-    [3] => Other addresses for localhost (not scanned): ::1
-    [4] => Not shown: 65529 closed tcp ports (conn-refused)
-    [5] => PORT     STATE SERVICE            VERSION
-    [6] => 80/tcp   open  http               Apache httpd 2.4.62 ((Debian))
-    [7] => 443/tcp  open  ssl/http           Apache httpd 2.4.62
-    [8] => 631/tcp  open  ipp                CUPS 2.4
-    [9] => 3306/tcp open  mysql              MySQL 5.5.5-10.11.11-MariaDB-0+deb12u1
-    [10] => 6789/tcp open  ssl/ibm-db2-admin?
-    [11] => 6791/tcp open  http               Golang net/http server (Go-IPFS json-rpc or InfluxDB API)
-    [12] => Service Info: Host: 127.0.1.1
-    [13] => 
-    [14] => Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-    [15] => Nmap done: 1 IP address (1 host up) scanned in 13.42 seconds
-)
-
-[17-Jun-2025 18:00:20 UTC] Script started
-[17-Jun-2025 18:00:20 UTC] Raw input: {"tool":"gobuster","target":"https://localhost/"}
-[17-Jun-2025 18:00:20 UTC] Executing command: gobuster dir -u 'https://localhost/' -w /usr/share/dirb/wordlists/common.txt -q
-[17-Jun-2025 18:00:20 UTC] Command return code: 1
-[17-Jun-2025 18:00:20 UTC] Command output: Array
-(
-    [0] => Error: error on running gobuster: unable to connect to https://localhost/: invalid certificate: x509: certificate is valid for debianprojet, not localhost
-)
-
-[17-Jun-2025 18:18:10 UTC] Script started
-[17-Jun-2025 18:18:10 UTC] Raw input: {"tool":"gobuster","target":"https://www.supdevinci.fr"}
-[17-Jun-2025 18:18:10 UTC] Executing command: gobuster dir -u 'https://www.supdevinci.fr' -w /usr/share/dirb/wordlists/common.txt -q
-[17-Jun-2025 18:26:39 UTC] Script started
-[17-Jun-2025 18:26:39 UTC] Raw input: {"tool":"gobuster","target":"https://www.google.com/"}
-[17-Jun-2025 18:26:39 UTC] Executing command: gobuster dir -u 'https://www.google.com/' -w /usr/share/dirb/wordlists/common.txt -q
-[17-Jun-2025 18:27:26 UTC] Command return code: 0
-[17-Jun-2025 18:27:26 UTC] Command output: Array
-(
-    [0] => [2K/2001                 (Status: 301) [Size: 239] [--> https://trends.google.com/trends/yis/2001/]
-    [1] => [2K/2002                 (Status: 301) [Size: 239] [--> https://trends.google.com/trends/yis/2002/]
-    [2] => [2K/2003                 (Status: 301) [Size: 239] [--> https://trends.google.com/trends/yis/2003/]
-    [3] => [2K/2004                 (Status: 301) [Size: 239] [--> https://trends.google.com/trends/yis/2004/]
-    [4] => [2K/2005                 (Status: 301) [Size: 239] [--> https://trends.google.com/trends/yis/2005/]
-    [5] => [2K/2006                 (Status: 301) [Size: 239] [--> https://trends.google.com/trends/yis/2006/]
-    [6] => [2K/2007                 (Status: 301) [Size: 239] [--> https://trends.google.com/trends/yis/2007/]
-    [7] => [2K/2008                 (Status: 301) [Size: 239] [--> https://trends.google.com/trends/yis/2008/]
-    [8] => [2K/2009                 (Status: 301) [Size: 239] [--> https://trends.google.com/trends/yis/2009/]
-    [9] => [2K/2010                 (Status: 301) [Size: 239] [--> https://trends.google.com/trends/yis/2010/]
-    [10] => [2K/2011                 (Status: 301) [Size: 239] [--> https://trends.google.com/trends/yis/2011/]
-    [11] => [2K/2013                 (Status: 301) [Size: 239] [--> https://trends.google.com/trends/yis/2013/]
-    [12] => [2K/2012                 (Status: 301) [Size: 239] [--> https://trends.google.com/trends/yis/2012/]
-    [13] => [2K/2014                 (Status: 301) [Size: 239] [--> https://trends.google.com/trends/yis/2014/]
-    [14] => [2K/about                (Status: 302) [Size: 218] [--> https://about.google/]
-    [15] => [2K/accessibility        (Status: 302) [Size: 262] [--> https://about.google/belonging/in-products/disability-innovation/]
-    [16] => [2K/account              (Status: 302) [Size: 228] [--> https://www.google.com/accounts]
-    [17] => [2K/accounts             (Status: 302) [Size: 237] [--> https://accounts.google.com/]
-    [18] => [2K/activity             (Status: 302) [Size: 0] [--> https://myactivity.google.com/activity]
-    [19] => [2K/ads                  (Status: 301) [Size: 224] [--> https://www.google.com/ads/]
-    [20] => [2K/advertise            (Status: 301) [Size: 224] [--> https://www.google.com/ads/]
-    [21] => [2K/advertisers          (Status: 301) [Size: 236] [--> https://www.google.com/ads/experienced/]
-    [22] => [2K/advertising          (Status: 301) [Size: 224] [--> https://www.google.com/ads/]
-    [23] => [2K/adview               (Status: 204) [Size: 0]
-    [24] => [2K/af                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/af/]
-    [25] => [2K/advanced_search      (Status: 200) [Size: 289694]
-    [26] => [2K/africa               (Status: 302) [Size: 232] [--> https://google-africa.blogspot.com/]
-    [27] => [2K/analytics            (Status: 301) [Size: 250] [--> https://marketingplatform.google.com/about/analytics/]
-    [28] => [2K/android              (Status: 301) [Size: 221] [--> https://www.android.com/]
-    [29] => [2K/alerts               (Status: 200) [Size: 152372]
-    [30] => [2K/answers              (Status: 301) [Size: 232] [--> https://answers.google.com/answers/]
-    [31] => [2K/apis                 (Status: 301) [Size: 221] [--> https://code.google.com/]
-    [32] => [2K/appliance            (Status: 302) [Size: 241] [--> https://enterprise.google.com/gsa/index.html]
-    [33] => [2K/ar                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/ar/]
-    [34] => [2K/az                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/az/]
-    [35] => [2K/ban                  (Status: 301) [Size: 229] [--> https://www.google.com/intl/ban/]
-    [36] => [2K/be                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/be/]
-    [37] => [2K/bg                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/bg/]
-    [38] => [2K/blocked              (Status: 301) [Size: 248] [--> http://support.google.com/accounts?p=client_login_m]
-    [39] => [2K/blog                 (Status: 301) [Size: 221] [--> https://www.blog.google/]
-    [40] => [2K/blogger              (Status: 301) [Size: 221] [--> https://www.blogger.com/]
-    [41] => [2K/books                (Status: 301) [Size: 227] [--> https://books.google.com/books]
-    [42] => [2K/br                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/br/]
-    [43] => [2K/bs                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/bs/]
-    [44] => [2K/business             (Status: 302) [Size: 0] [--> https://www.google.com/business/]
-    [45] => [2K/ca                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/ca/]
-    [46] => [2K/calendar             (Status: 302) [Size: 0] [--> https://calendar.google.com/calendar/u/0/r]
-    [47] => [2K/careers              (Status: 301) [Size: 224] [--> https://careers.google.com/]
-    [48] => [2K/cars                 (Status: 301) [Size: 225] [--> https://www.google.com/cars/]
-    [49] => [2K/chat                 (Status: 302) [Size: 221] [--> https://chat.google.com/]
-    [50] => [2K/chrome               (Status: 301) [Size: 227] [--> https://www.google.com/chrome/]
-    [51] => [2K/co                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/co/]
-    [52] => [2K/collection           (Status: 302) [Size: 0] [--> https://www.google.com/interests/saved]
-    [53] => [2K/commerce             (Status: 301) [Size: 229] [--> https://www.google.com/commerce/]
-    [54] => [2K/cm                   (Status: 301) [Size: 0] [--> https://campaignmanager.google.com/cm]
-    [55] => [2K/company              (Status: 301) [Size: 234] [--> https://www.google.com/about/company/]
-    [56] => [2K/compare              (Status: 301) [Size: 228] [--> https://www.google.com/compare/]
-    [57] => [2K/contact              (Status: 301) [Size: 228] [--> https://www.google.com/contact/]
-    [58] => [2K/contacts             (Status: 301) [Size: 225] [--> https://contacts.google.com/]
-    [59] => [2K/contributor          (Status: 301) [Size: 228] [--> https://contributor.google.com/]
-    [60] => [2K/creditcards          (Status: 302) [Size: 227] [--> https://www.google.com/compare]
-    [61] => [2K/crossdomain.xml      (Status: 200) [Size: 235]
-    [62] => [2K/crs                  (Status: 301) [Size: 229] [--> https://www.google.com/intl/crs/]
-    [63] => [2K/cs                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/cs/]
-    [64] => [2K/cse                  (Status: 301) [Size: 223] [--> https://cse.google.com/cse]
-    [65] => [2K/custom               (Status: 301) [Size: 226] [--> https://www.google.com/search]
-    [66] => [2K/cy                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/cy/]
-    [67] => [2K/da                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/da/]
-    [68] => [2K/cr                   (Status: 400) [Size: 16]
-    [69] => [2K/dashboard            (Status: 301) [Size: 235] [--> https://myaccount.google.com/dashboard]
-    [70] => [2K/de                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/de/]
-    [71] => [2K/deleted              (Status: 301) [Size: 270] [--> http://support.google.com/accounts/bin/answer.py?hl=en&answer=1212172]
-    [72] => [2K/design               (Status: 302) [Size: 219] [--> https://design.google/]
-    [73] => [2K/developer            (Status: 301) [Size: 227] [--> https://developers.google.com/]
-    [74] => [2K/developers           (Status: 301) [Size: 227] [--> https://developers.google.com/]
-    [75] => [2K/devices              (Status: 301) [Size: 241] [--> https://myaccount.google.com/device-activity]
-    [76] => [2K/device               (Status: 302) [Size: 243] [--> https://accounts.google.com/device]
-    [77] => [2K/docs                 (Status: 301) [Size: 221] [--> https://docs.google.com/]
-    [78] => [2K/domains              (Status: 301) [Size: 230] [--> https://domains.google.com/about/]
-    [79] => [2K/doubleclick          (Status: 301) [Size: 251] [--> https://marketingplatform.google.com/about/enterprise/]
-    [80] => [2K/ebooks               (Status: 301) [Size: 227] [--> http://books.google.com/ebooks]
-    [81] => [2K/edu                  (Status: 302) [Size: 220] [--> https://edu.google.com/]
-    [82] => [2K/education            (Status: 302) [Size: 220] [--> https://edu.google.com/]
-    [83] => [2K/ee                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/ee/]
-    [84] => [2K/el                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/el/]
-    [85] => [2K/en                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/en/]
-    [86] => [2K/enterprise           (Status: 301) [Size: 227] [--> https://enterprise.google.com/]
-    [87] => [2K/es                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/es/]
-    [88] => [2K/et                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/et/]
-    [89] => [2K/eu                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/eu/]
-    [90] => [2K/fa                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/fa/]
-    [91] => [2K/favicon.ico          (Status: 200) [Size: 5430]
-    [92] => [2K/finance              (Status: 302) [Size: 0] [--> https://www.google.com/finance/]
-    [93] => [2K/firefox              (Status: 301) [Size: 220] [--> https://www.google.com/]
-    [94] => [2K/flights              (Status: 302) [Size: 0] [--> https://consent.google.com/m?continue=https://www.google.com/flights&gl=FR&m=0&pc=flt&cm=2&hl=en-US&src=1]
-    [95] => [2K/fi                   (Status: 302) [Size: 0] [--> https://fi.google.com/]
-    [96] => [2K/forms                (Status: 301) [Size: 227] [--> https://docs.google.com/forms/]
-    [97] => [2K/fotos                (Status: 302) [Size: 233] [--> https://www.google.com/photos/about/]
-    [98] => [2K/fr                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/fr/]
-    [99] => [2K/friends              (Status: 302) [Size: 220] [--> https://www.google.com/]
-    [100] => [2K/ga                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/ga/]
-    [101] => [2K/games                (Status: 301) [Size: 245] [--> https://play.google.com/store/apps/category/GAME]
-    [102] => [2K/gl                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/gl/]
-    [103] => [2K/grants               (Status: 301) [Size: 227] [--> https://www.google.com/grants/]
-    [104] => [2K/green                (Status: 302) [Size: 227] [--> https://sustainability.google/]
-    [105] => [2K/groups               (Status: 302) [Size: 223] [--> https://groups.google.com/]
-    [106] => [2K/health               (Status: 301) [Size: 244] [--> https://www.google.com/intl/en_us/health/about/]
-    [107] => [2K/hi                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/hi/]
-    [108] => [2K/hire                 (Status: 301) [Size: 221] [--> https://hire.google.com/]
-    [109] => [2K/history              (Status: 302) [Size: 0] [--> https://www.google.com/history/]
-    [110] => [2K/home                 (Status: 301) [Size: 221] [--> https://home.google.com/]
-    [111] => [2K/homepage             (Status: 301) [Size: 244] [--> https://support.google.com/websearch/answer/463]
-    [112] => [2K/hosted               (Status: 301) [Size: 227] [--> https://www.google.com/hosted/]
-    [113] => [2K/hotels               (Status: 301) [Size: 233] [--> https://www.google.com/travel/hotels]
-    [114] => [2K/hr                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/hr/]
-    [115] => [2K/ht                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/ht/]
-    [116] => [2K/hu                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/hu/]
-    [117] => [2K/ia                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/ia/]
-    [118] => [2K/id                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/id/]
-    [119] => [2K/ideas                (Status: 301) [Size: 223] [--> https://jigsaw.google.com/]
-    [120] => [2K/ie                   (Status: 301) [Size: 244] [--> https://www.google.com/toolbar/ie8/sidebar.html]
-    [121] => [2K/ig                   (Status: 301) [Size: 225] [--> https://www.google.com/webhp]
-    [122] => [2K/images               (Status: 302) [Size: 225] [--> https://www.google.com/imghp]
-    [123] => [2K/in                   (Status: 302) [Size: 227] [--> https://all-in.withgoogle.com/]
-    [124] => [2K/inbox                (Status: 302) [Size: 232] [--> https://www.google.com/gmail/about/]
-    [125] => [2K/index.html           (Status: 200) [Size: 17164]
-    [126] => [2K/is                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/is/]
-    [127] => [2K/it                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/it/]
-    [128] => [2K/iw                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/iw/]
-    [129] => [2K/ja                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/ja/]
-    [130] => [2K/jigsaw               (Status: 301) [Size: 223] [--> https://jigsaw.google.com/]
-    [131] => [2K/jobs                 (Status: 301) [Size: 227] [--> https://jobs.google.com/about/]
-    [132] => [2K/jump                 (Status: 302) [Size: 221] [--> https://arvr.google.com/]
-    [133] => [2K/keep                 (Status: 302) [Size: 240] [--> https://workspace.google.com/products/keep/]
-    [134] => [2K/ko                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/ko/]
-    [135] => [2K/la                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/la/]
-    [136] => [2K/labs                 (Status: 301) [Size: 225] [--> https://labs.withgoogle.com/]
-    [137] => [2K/lg                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/lg/]
-    [138] => [2K/lo                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/lo/]
-    [139] => [2K/local                (Status: 302) [Size: 224] [--> https://www.google.com/maps]
-    [140] => [2K/log                  (Status: 400) [Size: 1555]
-    [141] => [2K/logos                (Status: 301) [Size: 235] [--> https://www.google.com/doodles/finder/]
-    [142] => [2K/lv                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/lv/]
-    [143] => [2K/lt                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/lt/]
-    [144] => [2K/m                    (Status: 200) [Size: 17229]
-    [145] => [2K/mail                 (Status: 301) [Size: 230] [--> https://mail.google.com/mail/u/0/]
-    [146] => [2K/manifest             (Status: 200) [Size: 62]
-    [147] => [2K/manufacturers        (Status: 301) [Size: 233] [--> https://manufacturers.google.com/mc/]
-    [148] => [2K/maps                 (Status: 302) [Size: 333] [--> https://consent.google.com/ml?continue=https://www.google.com/maps&gl=FR&m=0&pc=m&uxe=eomtm&cm=2&hl=fr&src=1]
-    [149] => [2K/mini                 (Status: 302) [Size: 232] [--> https://enterprise.google.com/mini/]
-    [150] => [2K/mk                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/mk/]
-    [151] => [2K/ml                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/ml/]
-    [152] => [2K/mo                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/mo/]
-    [153] => [2K/mobile               (Status: 301) [Size: 227] [--> https://www.google.com/mobile/]
-    [154] => [2K/moderator            (Status: 301) [Size: 248] [--> https://support.google.com/websearch/answer/6280697]
-    [155] => [2K/movies               (Status: 301) [Size: 233] [--> https://www.google.com/movies/about/]
-    [156] => [2K/ms                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/ms/]
-    [157] => [2K/mt                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/mt/]
-    [158] => [2K/music                (Status: 302) [Size: 226] [--> https://play.google.com/music]
-    [159] => [2K/my                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/my/]
-    [160] => [2K/myaccount            (Status: 302) [Size: 226] [--> https://myaccount.google.com/]
-    [161] => [2K/navigation           (Status: 301) [Size: 238] [--> https://www.google.com/mobile/navigation/]
-    [162] => [2K/ne                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/ne/]
-    [163] => [2K/news                 (Status: 302) [Size: 0] [--> https://news.google.com/news]
-    [164] => [2K/nl                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/nl/]
-    [165] => [2K/no                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/no/]
-    [166] => [2K/offers               (Status: 301) [Size: 227] [--> https://www.google.com/offers/]
-    [167] => [2K/on                   (Status: 302) [Size: 222] [--> https://on.google.com/hub]
-    [168] => [2K/opensource           (Status: 301) [Size: 223] [--> https://opensource.google/]
-    [169] => [2K/pa                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/pa/]
-    [170] => [2K/partners             (Status: 200) [Size: 10231]
-    [171] => [2K/password             (Status: 301) [Size: 244] [--> http://support.google.com/accounts?p=reset_pw_m]
-    [172] => [2K/passwords            (Status: 301) [Size: 222] [--> https://passwords.google/]
-    [173] => [2K/pay                  (Status: 302) [Size: 235] [--> https://pay.google.com/about/redirect/]
-    [174] => [2K/payments             (Status: 302) [Size: 225] [--> https://payments.google.com/]
-    [175] => [2K/patents              (Status: 302) [Size: 0] [--> https://patents.google.com]
-    [176] => [2K/pda                  (Status: 200) [Size: 17314]
-    [177] => [2K/phones               (Status: 302) [Size: 237] [--> https://store.google.com/category/phones]
-    [178] => [2K/phone                (Status: 302) [Size: 229] [--> https://madeby.google.com/phone/]
-    [179] => [2K/photos               (Status: 302) [Size: 233] [--> https://www.google.com/photos/about/]
-    [180] => [2K/pixel                (Status: 302) [Size: 314] [--> https://store.google.com/ideas/gemini-ai-assistant/?utm_source=fox&utm_medium=video_cpv&utm_campaign=GS108252]
-    [181] => [2K/pl                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/pl/]
-    [182] => [2K/places               (Status: 301) [Size: 411] [--> https://www.google.com/business/?gmbsrc=us-en-et-gs-z-gmb-l-z-h~pl|redirect|u&ppsrc=GMBLR&utm_campaign=us-en-et-gs-z-gmb-l-z-h~pl|redirect|u&utm_source=gmb&utm_medium=et&dialog=places-transition]
-    [183] => [2K/play                 (Status: 301) [Size: 227] [--> https://play.google.com/store/]
-    [184] => [2K/podcasts             (Status: 301) [Size: 225] [--> https://podcasts.google.com/]
-    [185] => [2K/policies             (Status: 301) [Size: 229] [--> https://www.google.com/policies/]
-    [186] => [2K/preferences          (Status: 200) [Size: 25154]
-    [187] => [2K/press                (Status: 301) [Size: 226] [--> https://www.google.com/press/]
-    [188] => [2K/privacy              (Status: 302) [Size: 224] [--> https://privacy.google.com/]
-    [189] => [2K/privacypolicy        (Status: 302) [Size: 243] [--> https://www.google.com/chrome/browser/privacy/]
-    [190] => [2K/products             (Status: 302) [Size: 238] [--> https://www.google.com/shopping?shopcct=1]
-    [191] => [2K/profiles             (Status: 301) [Size: 225] [--> https://profiles.google.com/]
-    [192] => [2K/ps                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/ps/]
-    [193] => [2K/publications         (Status: 301) [Size: 241] [--> https://research.google.com/pubs/papers.html]
-    [194] => [2K/publisher            (Status: 301) [Size: 234] [--> https://play.google.com/books/publish]
-    [195] => [2K/reader               (Status: 301) [Size: 233] [--> https://www.google.com/reader/about/]
-    [196] => [2K/recovery             (Status: 301) [Size: 240] [--> https://accounts.google.com/signin/recovery]
-    [197] => [2K/related              (Status: 301) [Size: 228] [--> https://www.google.com/related/]
-    [198] => [2K/research             (Status: 301) [Size: 221] [--> https://research.google/]
-    [199] => [2K/Research             (Status: 301) [Size: 228] [--> https://www.google.com/research]
-    [200] => [2K/retail               (Status: 302) [Size: 0] [--> https://www.google.com/retail/]
-    [201] => [2K/reporting            (Status: 302) [Size: 0] [--> https://www.google.com/reporting/]
-    [202] => [2K/ro                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/ro/]
-    [203] => [2K/robots.txt           (Status: 200) [Size: 7770]
-    [204] => [2K/ru                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/ru/]
-    [205] => [2K/s                    (Status: 400) [Size: 1555]
-    [206] => [2K/saved                (Status: 302) [Size: 0] [--> https://www.google.com/interests/saved]
-    [207] => [2K/save                 (Status: 302) [Size: 0] [--> https://www.google.com/interests/saved]
-    [208] => [2K/saves                (Status: 302) [Size: 0] [--> https://www.google.com/interests/saved]
-    [209] => [2K/script               (Status: 301) [Size: 223] [--> https://script.google.com/]
-    [210] => [2K/sd                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/sd/]
-    [211] => [2K/search               (Status: 302) [Size: 225] [--> https://www.google.com/webhp]
-    [212] => [2K/security             (Status: 301) [Size: 227] [--> https://safety.google/security]
-    [213] => [2K/services             (Status: 301) [Size: 229] [--> https://www.google.com/services/]
-    [214] => [2K/settings             (Status: 301) [Size: 226] [--> https://myaccount.google.com/]
-    [215] => [2K/shopping             (Status: 301) [Size: 231] [--> https://shopping.google.com?nord=1]
-    [216] => [2K/si                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/si/]
-    [217] => [2K/sitemap.xml          (Status: 200) [Size: 2055]
-    [218] => [2K/sitemaps             (Status: 301) [Size: 240] [--> https://www.google.com/webmasters/sitemaps/]
-    [219] => [2K/sites                (Status: 302) [Size: 222] [--> https://sites.google.com/]
-    [220] => [2K/sitesearch           (Status: 302) [Size: 251] [--> https://enterprise.google.com/search/products/gss.html]
-    [221] => [2K/sl                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/sl/]
-    [222] => [2K/slides               (Status: 301) [Size: 234] [--> https://docs.google.com/presentation/]
-    [223] => [2K/sk                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/sk/]
-    [224] => [2K/sms                  (Status: 302) [Size: 231] [--> https://www.google.com/mobile/sms/]
-    [225] => [2K/so                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/so/]
-    [226] => [2K/space                (Status: 301) [Size: 226] [--> https://www.google.com/space/]
-    [227] => [2K/sq                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/sq/]
-    [228] => [2K/sr                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/sr/]
-    [229] => [2K/st                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/st/]
-    [230] => [2K/store                (Status: 301) [Size: 298] [--> https://store.google.com/?utm_source=slash-store&utm_medium=redirect&utm_campaign=store-brand]
-    [231] => [2K/student              (Status: 302) [Size: 233] [--> https://careers.google.com/students/]
-    [232] => [2K/students             (Status: 302) [Size: 233] [--> https://careers.google.com/students/]
-    [233] => [2K/suggest              (Status: 400) [Size: 1555]
-    [234] => [2K/support              (Status: 301) [Size: 224] [--> https://support.google.com/]
-    [235] => [2K/survey               (Status: 301) [Size: 237] [--> https://www.google.com/analytics/surveys]
-    [236] => [2K/surveys              (Status: 301) [Size: 237] [--> https://www.google.com/analytics/surveys]
-    [237] => [2K/sv                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/sv/]
-    [238] => [2K/sw                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/sw/]
-    [239] => [2K/tags                 (Status: 302) [Size: 263] [--> https://www.google.com/support/places/bin/answer.py?answer=1252642]
-    [240] => [2K/talk                 (Status: 301) [Size: 229] [--> https://www.google.com/hangouts/]
-    [241] => [2K/talks                (Status: 301) [Size: 223] [--> https://g.co/talksatgoogle]
-    [242] => [2K/te                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/te/]
-    [243] => [2K/technology           (Status: 301) [Size: 243] [--> https://www.google.com/about/company/products/]
-    [244] => [2K/th                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/th/]
-    [245] => [2K/tn                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/tn/]
-    [246] => [2K/to                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/to/]
-    [247] => [2K/toolbar              (Status: 301) [Size: 241] [--> https://www.google.com/toolbar/ie/index.html]
-    [248] => [2K/tools                (Status: 302) [Size: 226] [--> https://www.google.com/chrome]
-    [249] => [2K/tr                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/tr/]
-    [250] => [2K/translate            (Status: 301) [Size: 226] [--> https://translate.google.com/]
-    [251] => [2K/travel               (Status: 302) [Size: 0] [--> https://www.google.com/travel/]
-    [252] => [2K/trends               (Status: 301) [Size: 230] [--> https://trends.google.com/trends/]
-    [253] => [2K/tt                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/tt/]
-    [254] => [2K/tv                   (Status: 302) [Size: 215] [--> https://tv.google/]
-    [255] => [2K/tw                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/tw/]
-    [256] => [2K/uk                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/uk/]
-    [257] => [2K/vi                   (Status: 301) [Size: 228] [--> https://www.google.com/intl/vi/]
-    [258] => [2K/video                (Status: 301) [Size: 222] [--> https://video.google.com/]
-    [259] => [2K/views                (Status: 301) [Size: 220] [--> https://www.google.com/]
-    [260] => [2K/webmaster            (Status: 301) [Size: 231] [--> https://www.google.com/webmasters/]
-    [261] => [2K/webmasters           (Status: 301) [Size: 231] [--> https://www.google.com/webmasters/]
-    [262] => [2K/wedding              (Status: 301) [Size: 229] [--> https://www.google.com/weddings/]
-    [263] => [2K/whatsnew             (Status: 301) [Size: 228] [--> https://www.google.com/options/]
-    [264] => [2K/wifi                 (Status: 302) [Size: 228] [--> https://madeby.google.com/wifi/]
-    [265] => [2K/work                 (Status: 301) [Size: 226] [--> https://www.google.com/cloud/]
-    [266] => [2K/wml                  (Status: 200) [Size: 17679]
-    [267] => [2K/xhtml                (Status: 200) [Size: 17575]
-)
-
-[17-Jun-2025 18:29:21 UTC] Script started
-[17-Jun-2025 18:29:21 UTC] Raw input: {"tool":"ping","target":"8.8.8.8"}
-[17-Jun-2025 18:29:21 UTC] Executing command: ping -c 4 '8.8.8.8'
-[17-Jun-2025 18:29:25 UTC] Command return code: 0
-[17-Jun-2025 18:29:25 UTC] Command output: Array
-(
-    [0] => PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
-    [1] => 64 bytes from 8.8.8.8: icmp_seq=1 ttl=128 time=5.09 ms
-    [2] => 64 bytes from 8.8.8.8: icmp_seq=2 ttl=128 time=10.4 ms
-    [3] => 64 bytes from 8.8.8.8: icmp_seq=3 ttl=128 time=4.68 ms
-    [4] => 64 bytes from 8.8.8.8: icmp_seq=4 ttl=128 time=4.81 ms
-    [5] => 
-    [6] => --- 8.8.8.8 ping statistics ---
-    [7] => 4 packets transmitted, 4 received, 0% packet loss, time 3005ms
-    [8] => rtt min/avg/max/mdev = 4.683/6.255/10.443/2.422 ms
-)
-
-[17-Jun-2025 18:29:25 UTC] Script started
-[17-Jun-2025 18:29:25 UTC] Raw input: {"tool":"traceroute","target":"8.8.8.8"}
-[17-Jun-2025 18:29:25 UTC] Executing command: traceroute '8.8.8.8'
-[17-Jun-2025 18:29:55 UTC] Command return code: 0
-[17-Jun-2025 18:29:55 UTC] Command output: Array
-(
-    [0] => traceroute to 8.8.8.8 (8.8.8.8), 30 hops max, 60 byte packets
-    [1] =>  1  _gateway (192.168.44.2)  0.067 ms  0.041 ms  0.021 ms
-    [2] =>  2  * * *
-    [3] =>  3  * * *
-    [4] =>  4  * * *
-    [5] =>  5  * * *
-    [6] =>  6  * * *
-    [7] =>  7  * * *
-    [8] =>  8  * * *
-    [9] =>  9  * * *
-    [10] => 10  * * *
-    [11] => 11  * * *
-    [12] => 12  * * *
-    [13] => 13  * * *
-    [14] => 14  * * *
-    [15] => 15  * * *
-    [16] => 16  * * *
-    [17] => 17  * * *
-    [18] => 18  * * *
-    [19] => 19  * * *
-    [20] => 20  * * *
-    [21] => 21  * * *
-    [22] => 22  * * *
-    [23] => 23  * * *
-    [24] => 24  * * *
-    [25] => 25  * * *
-    [26] => 26  * * *
-    [27] => 27  * * *
-    [28] => 28  * * *
-    [29] => 29  * * *
-    [30] => 30  * * *
-)
-
-[17-Jun-2025 18:29:55 UTC] Script started
-[17-Jun-2025 18:29:55 UTC] Raw input: {"tool":"traceroute","target":"8.8.8.8"}
-[17-Jun-2025 18:29:55 UTC] Executing command: traceroute '8.8.8.8'
-[17-Jun-2025 18:30:25 UTC] Command return code: 0
-[17-Jun-2025 18:30:25 UTC] Command output: Array
-(
-    [0] => traceroute to 8.8.8.8 (8.8.8.8), 30 hops max, 60 byte packets
-    [1] =>  1  _gateway (192.168.44.2)  0.085 ms  0.038 ms  0.033 ms
-    [2] =>  2  * * *
-    [3] =>  3  * * *
-    [4] =>  4  * * *
-    [5] =>  5  * * *
-    [6] =>  6  * * *
-    [7] =>  7  * * *
-    [8] =>  8  * * *
-    [9] =>  9  * * *
-    [10] => 10  * * *
-    [11] => 11  * * *
-    [12] => 12  * * *
-    [13] => 13  * * *
-    [14] => 14  * * *
-    [15] => 15  * * *
-    [16] => 16  * * *
-    [17] => 17  * * *
-    [18] => 18  * * *
-    [19] => 19  * * *
-    [20] => 20  * * *
-    [21] => 21  * * *
-    [22] => 22  * * *
-    [23] => 23  * * *
-    [24] => 24  * * *
-    [25] => 25  * * *
-    [26] => 26  * * *
-    [27] => 27  * * *
-    [28] => 28  * * *
-    [29] => 29  * * *
-    [30] => 30  * * *
-)
-
-[17-Jun-2025 18:30:25 UTC] Script started
-[17-Jun-2025 18:30:25 UTC] Raw input: {"tool":"ping","target":"8.8.8.8"}
-[17-Jun-2025 18:30:25 UTC] Executing command: ping -c 4 '8.8.8.8'
-[17-Jun-2025 18:30:28 UTC] Command return code: 0
-[17-Jun-2025 18:30:28 UTC] Command output: Array
-(
-    [0] => PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
-    [1] => 64 bytes from 8.8.8.8: icmp_seq=1 ttl=128 time=4.94 ms
-    [2] => 64 bytes from 8.8.8.8: icmp_seq=2 ttl=128 time=4.76 ms
-    [3] => 64 bytes from 8.8.8.8: icmp_seq=3 ttl=128 time=5.36 ms
-    [4] => 64 bytes from 8.8.8.8: icmp_seq=4 ttl=128 time=4.95 ms
-    [5] => 
-    [6] => --- 8.8.8.8 ping statistics ---
-    [7] => 4 packets transmitted, 4 received, 0% packet loss, time 3005ms
-    [8] => rtt min/avg/max/mdev = 4.762/5.002/5.361/0.220 ms
-)
-
-[17-Jun-2025 18:30:31 UTC] Script started
-[17-Jun-2025 18:30:31 UTC] Raw input: {"tool":"ping","target":"cyna-it.fr"}
-[17-Jun-2025 18:30:31 UTC] Executing command: ping -c 4 'cyna-it.fr'
-[17-Jun-2025 18:30:39 UTC] Command return code: 0
-[17-Jun-2025 18:30:39 UTC] Command output: Array
-(
-    [0] => PING cyna-it.fr (192.0.78.235) 56(84) bytes of data.
-    [1] => 64 bytes from 192.0.78.235 (192.0.78.235): icmp_seq=1 ttl=128 time=12.9 ms
-    [2] => 64 bytes from 192.0.78.235 (192.0.78.235): icmp_seq=2 ttl=128 time=5.52 ms
-    [3] => 64 bytes from 192.0.78.235 (192.0.78.235): icmp_seq=3 ttl=128 time=5.24 ms
-    [4] => 64 bytes from 192.0.78.235 (192.0.78.235): icmp_seq=4 ttl=128 time=5.79 ms
-    [5] => 
-    [6] => --- cyna-it.fr ping statistics ---
-    [7] => 4 packets transmitted, 4 received, 0% packet loss, time 3004ms
-    [8] => rtt min/avg/max/mdev = 5.243/7.377/12.949/3.222 ms
-)
-
-[17-Jun-2025 18:30:46 UTC] Script started
-[17-Jun-2025 18:30:46 UTC] Raw input: {"tool":"nmap","target":"cyna-it.fr"}
-[17-Jun-2025 18:30:46 UTC] Executing command: nmap -sV -p- -T4 --min-rate 1000 'cyna-it.fr'
-[17-Jun-2025 18:32:58 UTC] Command return code: 0
-[17-Jun-2025 18:32:58 UTC] Command output: Array
-(
-    [0] => Starting Nmap 7.93 ( https://nmap.org ) at 2025-06-17 20:30 CEST
-    [1] => Nmap scan report for cyna-it.fr (192.0.78.136)
-    [2] => Host is up (0.0093s latency).
-    [3] => Other addresses for cyna-it.fr (not scanned): 192.0.78.235
-    [4] => All 65535 scanned ports on cyna-it.fr (192.0.78.136) are in ignored states.
-    [5] => Not shown: 65535 filtered tcp ports (no-response)
-    [6] => 
-    [7] => Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-    [8] => Nmap done: 1 IP address (1 host up) scanned in 131.56 seconds
-)
-
-[17-Jun-2025 18:32:58 UTC] Script started
-[17-Jun-2025 18:32:58 UTC] Raw input: {"tool":"nmap","target":"cyna-it.fr"}
-[17-Jun-2025 18:32:58 UTC] Executing command: nmap -sV -p- -T4 --min-rate 1000 'cyna-it.fr'
-[17-Jun-2025 18:33:13 UTC] Command return code: 0
-[17-Jun-2025 18:33:13 UTC] Command output: Array
-(
-    [0] => Starting Nmap 7.93 ( https://nmap.org ) at 2025-06-17 20:32 CEST
-    [1] => Failed to resolve "cyna-it.fr".
-    [2] => WARNING: No targets were specified, so 0 hosts scanned.
-    [3] => Nmap done: 0 IP addresses (0 hosts up) scanned in 15.44 seconds
-)
-
-[17-Jun-2025 18:33:13 UTC] Script started
-[17-Jun-2025 18:33:13 UTC] Raw input: {"tool":"nmap","target":"https://localhost/index.php"}
-[17-Jun-2025 18:33:13 UTC] Executing command: nmap -sV -p- -T4 --min-rate 1000 'localhost'
-[17-Jun-2025 18:33:27 UTC] Command return code: 0
-[17-Jun-2025 18:33:27 UTC] Command output: Array
-(
-    [0] => Starting Nmap 7.93 ( https://nmap.org ) at 2025-06-17 20:33 CEST
-    [1] => Nmap scan report for localhost (127.0.0.1)
-    [2] => Host is up (0.000066s latency).
-    [3] => Other addresses for localhost (not scanned): ::1
-    [4] => Not shown: 65529 closed tcp ports (conn-refused)
-    [5] => PORT     STATE SERVICE            VERSION
-    [6] => 80/tcp   open  http               Apache httpd 2.4.62 ((Debian))
-    [7] => 443/tcp  open  ssl/http           Apache httpd 2.4.62
-    [8] => 631/tcp  open  ipp                CUPS 2.4
-    [9] => 3306/tcp open  mysql              MySQL 5.5.5-10.11.11-MariaDB-0+deb12u1
-    [10] => 6789/tcp open  ssl/ibm-db2-admin?
-    [11] => 6791/tcp open  http               Golang net/http server (Go-IPFS json-rpc or InfluxDB API)
-    [12] => Service Info: Host: 127.0.1.1
-    [13] => 
-    [14] => Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-    [15] => Nmap done: 1 IP address (1 host up) scanned in 13.33 seconds
-)
-
-[17-Jun-2025 18:33:27 UTC] Script started
-[17-Jun-2025 18:33:27 UTC] Raw input: {"tool":"ping","target":"8.8.8.8"}
-[17-Jun-2025 18:33:27 UTC] Executing command: ping -c 4 '8.8.8.8'
-[17-Jun-2025 18:33:30 UTC] Command return code: 0
-[17-Jun-2025 18:33:30 UTC] Command output: Array
-(
-    [0] => PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
-    [1] => 64 bytes from 8.8.8.8: icmp_seq=1 ttl=128 time=5.44 ms
-    [2] => 64 bytes from 8.8.8.8: icmp_seq=2 ttl=128 time=5.70 ms
-    [3] => 64 bytes from 8.8.8.8: icmp_seq=3 ttl=128 time=4.94 ms
-    [4] => 64 bytes from 8.8.8.8: icmp_seq=4 ttl=128 time=4.71 ms
-    [5] => 
-    [6] => --- 8.8.8.8 ping statistics ---
-    [7] => 4 packets transmitted, 4 received, 0% packet loss, time 3006ms
-    [8] => rtt min/avg/max/mdev = 4.707/5.197/5.704/0.393 ms
-)
-
-[17-Jun-2025 18:36:58 UTC] Script started
-[17-Jun-2025 18:36:58 UTC] Raw input: {"tool":"nmap","target":"localhost"}
-[17-Jun-2025 18:36:58 UTC] Executing command: nmap -sV -p- -T4 --min-rate 1000 'localhost'
-[17-Jun-2025 18:37:11 UTC] Command return code: 0
-[17-Jun-2025 18:37:11 UTC] Command output: Array
-(
-    [0] => Starting Nmap 7.93 ( https://nmap.org ) at 2025-06-17 20:36 CEST
-    [1] => Nmap scan report for localhost (127.0.0.1)
-    [2] => Host is up (0.000067s latency).
-    [3] => Other addresses for localhost (not scanned): ::1
-    [4] => Not shown: 65529 closed tcp ports (conn-refused)
-    [5] => PORT     STATE SERVICE            VERSION
-    [6] => 80/tcp   open  http               Apache httpd 2.4.62 ((Debian))
-    [7] => 443/tcp  open  ssl/http           Apache httpd 2.4.62
-    [8] => 631/tcp  open  ipp                CUPS 2.4
-    [9] => 3306/tcp open  mysql              MySQL 5.5.5-10.11.11-MariaDB-0+deb12u1
-    [10] => 6789/tcp open  ssl/ibm-db2-admin?
-    [11] => 6791/tcp open  http               Golang net/http server (Go-IPFS json-rpc or InfluxDB API)
-    [12] => Service Info: Host: 127.0.1.1
-    [13] => 
-    [14] => Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-    [15] => Nmap done: 1 IP address (1 host up) scanned in 13.30 seconds
-)
-
-[17-Jun-2025 18:38:44 UTC] Script started
-[17-Jun-2025 18:38:44 UTC] Raw input: {"tool":"nmap","target":"cyna-it.fr"}
-[17-Jun-2025 18:38:44 UTC] Executing command: nmap -sV -p- -T4 --min-rate 1000 'cyna-it.fr'
-[17-Jun-2025 18:39:04 UTC] Command return code: 0
-[17-Jun-2025 18:39:04 UTC] Command output: Array
-(
-    [0] => Starting Nmap 7.93 ( https://nmap.org ) at 2025-06-17 20:38 CEST
-    [1] => Failed to resolve "cyna-it.fr".
-    [2] => WARNING: No targets were specified, so 0 hosts scanned.
-    [3] => Nmap done: 0 IP addresses (0 hosts up) scanned in 20.17 seconds
-)
-
-[17-Jun-2025 18:40:22 UTC] Script started
-[17-Jun-2025 18:40:22 UTC] Raw input: {"tool":"nikto","target":"cyna-it.fr"}
-[17-Jun-2025 18:40:22 UTC] Executing command: nikto -h 'cyna-it.fr'
-[17-Jun-2025 18:40:43 UTC] Command return code: 0
-[17-Jun-2025 18:40:43 UTC] Command output: Array
-(
-    [0] => - Nikto v2.1.5
-    [1] => ---------------------------------------------------------------------------
-    [2] => + ERROR: Cannot resolve hostname 'cyna-it.fr'
-    [3] => + 0 host(s) tested
-)
-
-[17-Jun-2025 18:41:11 UTC] Script started
-[17-Jun-2025 18:41:11 UTC] Raw input: {"tool":"nikto","target":"https://cyna-it.fr"}
-[17-Jun-2025 18:41:11 UTC] Executing command: nikto -h 'cyna-it.fr'
-[17-Jun-2025 18:42:23 UTC] Command return code: 0
-[17-Jun-2025 18:42:23 UTC] Command output: Array
-(
-    [0] => - Nikto v2.1.5
-    [1] => ---------------------------------------------------------------------------
-    [2] => + No web server found on cyna-it.fr:80
-    [3] => ---------------------------------------------------------------------------
-    [4] => + 0 host(s) tested
-)
-
-[17-Jun-2025 18:44:53 UTC] Script started
-[17-Jun-2025 18:44:53 UTC] Raw input: {"tool":"nikto","target":"https://www.colombes.fr/"}
-[17-Jun-2025 18:44:53 UTC] Executing command: nikto -h 'www.colombes.fr'
-[17-Jun-2025 18:58:51 UTC] Command return code: 0
-[17-Jun-2025 18:58:51 UTC] Command output: Array
-(
-    [0] => - Nikto v2.1.5
-    [1] => ---------------------------------------------------------------------------
-    [2] => + Target IP:          87.98.159.160
-    [3] => + Target Hostname:    www.colombes.fr
-    [4] => + Target Port:        80
-    [5] => + Start Time:         2025-06-17 20:46:34 (GMT2)
-    [6] => ---------------------------------------------------------------------------
-    [7] => + Server: No banner retrieved
-    [8] => + The anti-clickjacking X-Frame-Options header is not present.
-    [9] => + Uncommon header 'content-security-policy' found, with contents: default-src * 'unsafe-inline' 'unsafe-eval'; frame-ancestors 'self' https://*; object-src 'self' data: blob: https://*; font-src * data:; script-src * 'unsafe-inline' 'unsafe-eval' blob: data:; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline' 'self' https:; frame-src *; style-src * 'unsafe-inline';
-    [10] => + Uncommon header 'referrer-policy' found, with contents: unsafe-url
-    [11] => + Uncommon header 'strict-transport-security' found, with contents: max-age=31536000; includeSubdomains; preload
-    [12] => + Uncommon header 'permissions-policy' found, with contents: autoplay=*, geolocation=(self), fullscreen=*
-    [13] => + Uncommon header 'x-content-type-options' found, with contents: nosniff
-    [14] => + Uncommon header 'x-xss-protection' found, with contents: 1; mode=block
-    [15] => + Root page / redirects to: https://www.colombes.fr/
-    [16] => + No CGI Directories found (use '-C all' to force check all possible dirs)
-    [17] => + Server leaks inodes via ETags, header found with file /, fields: 0x6422bc3d 0x1c27c
-    [18] => + 6544 items checked: 19 error(s) and 8 item(s) reported on remote host
-    [19] => + End Time:           2025-06-17 20:58:51 (GMT2) (737 seconds)
-    [20] => ---------------------------------------------------------------------------
-    [21] => + 1 host(s) tested
-)
-
-[17-Jun-2025 19:18:59 UTC] Script started
-[17-Jun-2025 19:18:59 UTC] Raw input: {"tool":"nmap","target":"www.supdevinci.fr"}
-[17-Jun-2025 19:18:59 UTC] Executing command: nmap -sV -p- -T4 --min-rate 1000 'www.supdevinci.fr'
-[17-Jun-2025 19:23:27 UTC] Command return code: 0
-[17-Jun-2025 19:23:27 UTC] Command output: Array
-(
-    [0] => Starting Nmap 7.93 ( https://nmap.org ) at 2025-06-17 21:18 CEST
-    [1] => Nmap scan report for www.supdevinci.fr (51.75.130.27)
-    [2] => Host is up (0.10s latency).
-    [3] => rDNS record for 51.75.130.27: ns3131900.ip-51-75-130.eu
-    [4] => Not shown: 64709 filtered tcp ports (no-response), 823 filtered tcp ports (host-unreach)
-    [5] => PORT     STATE SERVICE VERSION
-    [6] => 21/tcp   open  ftp     Pure-FTPd
-    [7] => 80/tcp   open  http    Apache httpd
-    [8] => 3306/tcp open  mysql   MySQL 5.5.5-10.5.29-MariaDB-0+deb11u1
-    [9] => 
-    [10] => Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-    [11] => Nmap done: 1 IP address (1 host up) scanned in 268.25 seconds
-)
-
-[17-Jun-2025 19:24:04 UTC] Script started
-[17-Jun-2025 19:24:04 UTC] Raw input: {"tool":"nikto","target":"www.supdevinci.fr"}
-[17-Jun-2025 19:24:04 UTC] Executing command: nikto -h 'www.supdevinci.fr'
-[17-Jun-2025 19:25:07 UTC] Command return code: 0
-[17-Jun-2025 19:25:07 UTC] Command output: Array
-(
-    [0] => - Nikto v2.1.5
-    [1] => ---------------------------------------------------------------------------
-    [2] => + Target IP:          51.75.130.27
-    [3] => + Target Hostname:    www.supdevinci.fr
-    [4] => + Target Port:        80
-    [5] => + Start Time:         2025-06-17 21:24:05 (GMT2)
-    [6] => ---------------------------------------------------------------------------
-    [7] => + Server: Apache
-    [8] => + The anti-clickjacking X-Frame-Options header is not present.
-    [9] => + Root page / redirects to: https://www.supdevinci.fr/
-    [10] => + No CGI Directories found (use '-C all' to force check all possible dirs)
-    [11] => + Server leaks inodes via ETags, header found with file /, fields: 0x3 0x619808d9ef5ba
-    [12] => + Uncommon header 'x-content-type-options' found, with contents: nosniff
-    [13] => + Uncommon header 'referrer-policy' found, with contents: strict-origin
-    [14] => + Uncommon header 'x-xss-protection' found, with contents: 1; mode=block
-    [15] => + Uncommon header 'strict-transport-security' found, with contents: max-age=63072000; includeSubdomains; preload
-    [16] => + OSVDB-3931: /myphpnuke/links.php?op=search&query=[script]alert('Vulnerable);[/script]?query=: myphpnuke is vulnerable to Cross Site Scripting (XSS). http://www.cert.org/advisories/CA-2000-02.html.
-    [17] => + OSVDB-3931: /myphpnuke/links.php?op=MostPopular&ratenum=[script]alert(document.cookie);[/script]&ratetype=percent: myphpnuke is vulnerable to Cross Site Scripting (XSS). http://www.cert.org/advisories/CA-2000-02.html.
-    [18] => + /modules.php?letter=%22%3E%3Cimg%20src=javascript:alert(document.cookie);%3E&op=modload&name=Members_List&file=index: Post Nuke 0.7.2.3-Phoenix is vulnerable to Cross Site Scripting (XSS). http://www.cert.org/advisories/CA-2000-02.html.
-    [19] => + 6544 items checked: 0 error(s) and 9 item(s) reported on remote host
-    [20] => + End Time:           2025-06-17 21:25:07 (GMT2) (62 seconds)
-    [21] => ---------------------------------------------------------------------------
-    [22] => + 1 host(s) tested
-)
-
