@@ -1,0 +1,515 @@
+[19-Jun-2025 07:58:10 UTC] Script started
+[19-Jun-2025 07:58:10 UTC] Raw input: {"tool":"subfinder","target":"https://www.supdevinci.fr/"}
+[19-Jun-2025 07:58:10 UTC] Executing command: sudo -u www-data /home/matthis/go/bin/subfinder -d cyna-it.fr -silent \
+
+[19-Jun-2025 07:58:13 UTC] Command return code: 0
+[19-Jun-2025 07:58:13 UTC] Command output: Array
+(
+    [0] => feedback.cyna-it.fr
+    [1] => mail.cyna-it.fr
+    [2] => www.cyna-it.fr
+    [3] => forms.cyna-it.fr
+)
+
+[19-Jun-2025 07:58:49 UTC] Script started
+[19-Jun-2025 07:58:49 UTC] Raw input: {"tool":"subfinder","target":"https://www.supdevinci.fr/"}
+[19-Jun-2025 07:58:49 UTC] Executing command: sudo -u www-data /home/matthis/go/bin/subfinder -d 'www.supdevinci.fr' -silent \
+
+[19-Jun-2025 07:58:52 UTC] Command return code: 0
+[19-Jun-2025 07:58:52 UTC] Command output: Array
+(
+)
+
+[19-Jun-2025 07:59:04 UTC] Script started
+[19-Jun-2025 07:59:04 UTC] Raw input: {"tool":"subfinder","target":"www.supdevinci.fr"}
+[19-Jun-2025 07:59:04 UTC] Executing command: sudo -u www-data /home/matthis/go/bin/subfinder -d 'www.supdevinci.fr' -silent \
+
+[19-Jun-2025 07:59:07 UTC] Command return code: 0
+[19-Jun-2025 07:59:07 UTC] Command output: Array
+(
+)
+
+[19-Jun-2025 07:59:53 UTC] Script started
+[19-Jun-2025 07:59:53 UTC] Raw input: {"tool":"subfinder","target":"cyna-it.fr"}
+[19-Jun-2025 07:59:53 UTC] Executing command: sudo -u www-data /home/matthis/go/bin/subfinder -d 'cyna-it.fr' -silent \
+
+[19-Jun-2025 08:00:04 UTC] Command return code: 0
+[19-Jun-2025 08:00:04 UTC] Command output: Array
+(
+    [0] => mail.cyna-it.fr
+    [1] => forms.cyna-it.fr
+    [2] => www.cyna-it.fr
+    [3] => feedback.cyna-it.fr
+)
+
+[19-Jun-2025 08:00:40 UTC] Script started
+[19-Jun-2025 08:00:40 UTC] Raw input: {"tool":"nuclei","target":"cyna-it.fr"}
+[19-Jun-2025 08:00:40 UTC] Executing command: nuclei -u 'cyna-it.fr' --stats
+[19-Jun-2025 08:00:40 UTC] Command not found: nuclei
+[19-Jun-2025 08:00:40 UTC] Exception caught: Command not found: nuclei
+[19-Jun-2025 08:00:52 UTC] Script started
+[19-Jun-2025 08:00:52 UTC] Raw input: {"tool":"nuclei","target":"cyna-it.fr"}
+[19-Jun-2025 08:00:52 UTC] Executing command: nuclei -u 'cyna-it.fr' --stats
+[19-Jun-2025 08:00:52 UTC] Command not found: nuclei
+[19-Jun-2025 08:00:52 UTC] Exception caught: Command not found: nuclei
+[19-Jun-2025 08:02:00 UTC] Script started
+[19-Jun-2025 08:02:00 UTC] Raw input: {"tool":"nuclei","target":"cyna-it.fr"}
+[19-Jun-2025 08:02:00 UTC] Executing command: sudo -u www-data /home/matthis/go/bin/nuclei -u 'cyna-it.fr' --stats
+[19-Jun-2025 08:02:04 UTC] Command return code: 1
+[19-Jun-2025 08:02:04 UTC] Command output: Array
+(
+    [0] => [[31mERR[0m] failed to load provider keys got EOF
+    [1] => 
+    [2] =>                      __     _
+    [3] =>    ____  __  _______/ /__  (_)
+    [4] =>   / __ \/ / / / ___/ / _ \/ /
+    [5] =>  / / / / /_/ / /__/ /  __/ /
+    [6] => /_/ /_/\__,_/\___/_/\___/_/   v3.4.4
+    [7] => 
+    [8] => 		projectdiscovery.io
+    [9] => 
+    [10] => [[34mINF[0m] nuclei-templates are not installed, installing...
+    [11] => [[34mINF[0m] nuclei-templates are not installed, installing...
+    [12] => [[31mERR[0m] Could not find template '/var/www/html/php/nuclei-templates': could not find file: open /var/www/html/php/nuclei-templates: no such file or directory
+    [13] => [[34mINF[0m] Current nuclei version: v3.4.4 ([91moutdated[0m)
+    [14] => [[34mINF[0m] Current nuclei-templates version:  ([91moutdated[0m)
+    [15] => [[93mWRN[0m] Scan results upload to cloud is disabled.
+    [16] => [[34mINF[0m] Targets loaded for current scan: 1
+    [17] => [[34mINF[0m] Scan completed in 6.675499ms. No results found.
+    [18] => [[1;31mFTL[0m] Could not run nuclei: no templates provided for scan
+)
+
+[19-Jun-2025 08:58:14 UTC] Script started
+[19-Jun-2025 08:58:14 UTC] Raw input: {"tool":"nuclei","target":"https://www.supdevinci.fr/"}
+[19-Jun-2025 08:58:14 UTC] Executing command: sudo -u www-data /home/matthis/go/bin/nuclei -u 'https://www.supdevinci.fr/' -stats -silent -no-color -t /var/www/nuclei-templates/
+[19-Jun-2025 09:25:39 UTC] Command return code: 0
+[19-Jun-2025 09:25:39 UTC] Command output: Array
+(
+    [0] => [[31mERR[0m] failed to load provider keys got EOF
+    [1] => [0:00:05] | Templates: 7870 | Hosts: 1 | RPS: 1 | Matched: 0 | Errors: 0 | Requests: 6/13472 (0%)
+    [2] => [0:00:10] | Templates: 7870 | Hosts: 1 | RPS: 0 | Matched: 0 | Errors: 0 | Requests: 6/13472 (0%)
+    [3] => [0:00:15] | Templates: 7870 | Hosts: 1 | RPS: 0 | Matched: 0 | Errors: 0 | Requests: 6/13472 (0%)
+    [4] => [0:00:20] | Templates: 7870 | Hosts: 1 | RPS: 0 | Matched: 0 | Errors: 0 | Requests: 6/13472 (0%)
+    [5] => [0:00:25] | Templates: 7870 | Hosts: 1 | RPS: 1 | Matched: 0 | Errors: 48 | Requests: 38/13472 (0%)
+    [6] => [0:00:30] | Templates: 7870 | Hosts: 1 | RPS: 1 | Matched: 0 | Errors: 48 | Requests: 38/13472 (0%)
+    [7] => [0:00:35] | Templates: 7870 | Hosts: 1 | RPS: 1 | Matched: 0 | Errors: 50 | Requests: 39/13472 (0%)
+    [8] => [0:00:40] | Templates: 7870 | Hosts: 1 | RPS: 0 | Matched: 0 | Errors: 50 | Requests: 39/13472 (0%)
+    [9] => [0:00:45] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 98 | Requests: 108/13472 (0%)
+    [10] => [0:00:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 98 | Requests: 108/13472 (0%)
+    [11] => [0:00:55] | Templates: 7870 | Hosts: 1 | RPS: 1 | Matched: 0 | Errors: 100 | Requests: 109/13472 (0%)
+    [12] => [0:01:00] | Templates: 7870 | Hosts: 1 | RPS: 1 | Matched: 0 | Errors: 100 | Requests: 109/13472 (0%)
+    [13] => [0:01:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 172 | Requests: 154/13472 (1%)
+    [14] => [0:01:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 172 | Requests: 154/13472 (1%)
+    [15] => [0:01:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 174 | Requests: 155/13472 (1%)
+    [16] => [0:01:20] | Templates: 7870 | Hosts: 1 | RPS: 1 | Matched: 0 | Errors: 174 | Requests: 155/13472 (1%)
+    [17] => [0:01:25] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 223 | Requests: 195/13472 (1%)
+    [18] => [0:01:30] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 223 | Requests: 195/13472 (1%)
+    [19] => [0:01:35] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 225 | Requests: 196/13472 (1%)
+    [20] => [0:01:40] | Templates: 7870 | Hosts: 1 | RPS: 1 | Matched: 0 | Errors: 225 | Requests: 196/13472 (1%)
+    [21] => [0:01:45] | Templates: 7870 | Hosts: 1 | RPS: 1 | Matched: 0 | Errors: 225 | Requests: 196/13472 (1%)
+    [22] => [0:01:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 273 | Requests: 247/13472 (1%)
+    [23] => [0:01:55] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 273 | Requests: 247/13472 (1%)
+    [24] => [0:02:00] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 275 | Requests: 251/13472 (1%)
+    [25] => [0:02:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 275 | Requests: 251/13472 (1%)
+    [26] => [0:02:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 321 | Requests: 376/13472 (2%)
+    [27] => [0:02:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 321 | Requests: 376/13472 (2%)
+    [28] => [0:02:20] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 325 | Requests: 379/13472 (2%)
+    [29] => [0:02:25] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 325 | Requests: 379/13472 (2%)
+    [30] => [0:02:30] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 371 | Requests: 412/13472 (3%)
+    [31] => [0:02:35] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 371 | Requests: 412/13472 (3%)
+    [32] => [0:02:40] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 375 | Requests: 415/13472 (3%)
+    [33] => [0:02:45] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 375 | Requests: 415/13472 (3%)
+    [34] => [0:02:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 421 | Requests: 453/13472 (3%)
+    [35] => [0:02:55] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 421 | Requests: 453/13472 (3%)
+    [36] => [0:03:00] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 427 | Requests: 491/13472 (3%)
+    [37] => [0:03:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 427 | Requests: 491/13472 (3%)
+    [38] => [0:03:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 445 | Requests: 504/13472 (3%)
+    [39] => [0:03:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 471 | Requests: 524/13472 (3%)
+    [40] => [0:03:20] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 473 | Requests: 524/13472 (3%)
+    [41] => [0:03:25] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 477 | Requests: 527/13472 (3%)
+    [42] => [0:03:30] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 477 | Requests: 527/13472 (3%)
+    [43] => [0:03:35] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 519 | Requests: 554/13472 (4%)
+    [44] => [0:03:40] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 519 | Requests: 554/13472 (4%)
+    [45] => [0:03:45] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 527 | Requests: 568/13472 (4%)
+    [46] => [0:03:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 527 | Requests: 568/13472 (4%)
+    [47] => [0:03:55] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 565 | Requests: 603/13472 (4%)
+    [48] => [0:04:00] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 565 | Requests: 603/13472 (4%)
+    [49] => [0:04:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 573 | Requests: 611/13472 (4%)
+    [50] => [0:04:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 573 | Requests: 611/13472 (4%)
+    [51] => [0:04:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 613 | Requests: 635/13472 (4%)
+    [52] => [0:04:20] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 613 | Requests: 635/13472 (4%)
+    [53] => [0:04:25] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 625 | Requests: 647/13472 (4%)
+    [54] => [0:04:30] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 625 | Requests: 647/13472 (4%)
+    [55] => [0:04:35] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 663 | Requests: 679/13472 (5%)
+    [56] => [0:04:40] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 663 | Requests: 679/13472 (5%)
+    [57] => [0:04:45] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 675 | Requests: 685/13472 (5%)
+    [58] => [0:04:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 675 | Requests: 685/13472 (5%)
+    [59] => [0:04:55] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 677 | Requests: 686/13472 (5%)
+    [60] => [0:05:00] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 717 | Requests: 711/13472 (5%)
+    [61] => [0:05:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 725 | Requests: 732/13472 (5%)
+    [62] => [0:05:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 729 | Requests: 734/13472 (5%)
+    [63] => [0:05:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 729 | Requests: 734/13472 (5%)
+    [64] => [0:05:20] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 767 | Requests: 768/13472 (5%)
+    [65] => [0:05:25] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 771 | Requests: 770/13472 (5%)
+    [66] => [0:05:30] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 781 | Requests: 780/13472 (5%)
+    [67] => [0:05:35] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 781 | Requests: 780/13472 (5%)
+    [68] => [0:05:40] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 819 | Requests: 821/13472 (6%)
+    [69] => [0:05:45] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 819 | Requests: 821/13472 (6%)
+    [70] => [0:05:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 833 | Requests: 883/13472 (6%)
+    [71] => [0:05:55] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 833 | Requests: 883/13472 (6%)
+    [72] => [0:06:00] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 869 | Requests: 907/13472 (6%)
+    [73] => [0:06:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 869 | Requests: 907/13472 (6%)
+    [74] => [0:06:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 885 | Requests: 923/13472 (6%)
+    [75] => [0:06:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 887 | Requests: 924/13472 (6%)
+    [76] => [0:06:20] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 919 | Requests: 943/13472 (6%)
+    [77] => [0:06:25] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 919 | Requests: 943/13472 (6%)
+    [78] => [0:06:30] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 931 | Requests: 949/13472 (7%)
+    [79] => [0:06:35] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 937 | Requests: 952/13472 (7%)
+    [80] => [0:06:40] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 941 | Requests: 957/13472 (7%)
+    [81] => [0:06:45] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 969 | Requests: 978/13472 (7%)
+    [82] => [0:06:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 977 | Requests: 986/13472 (7%)
+    [83] => [0:06:55] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 985 | Requests: 996/13472 (7%)
+    [84] => [0:07:00] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 987 | Requests: 997/13472 (7%)
+    [85] => [0:07:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1019 | Requests: 1035/13472 (7%)
+    [86] => [0:07:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1019 | Requests: 1035/13472 (7%)
+    [87] => [0:07:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1035 | Requests: 1055/13472 (7%)
+    [88] => [0:07:20] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1037 | Requests: 1056/13472 (7%)
+    [89] => [0:07:25] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1069 | Requests: 1073/13472 (7%)
+    [90] => [0:07:30] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1069 | Requests: 1073/13472 (7%)
+    [91] => [0:07:35] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1089 | Requests: 1093/13472 (8%)
+    [92] => [0:07:40] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1091 | Requests: 1094/13472 (8%)
+    [93] => [0:07:45] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1125 | Requests: 1122/13472 (8%)
+    [94] => [0:07:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1125 | Requests: 1122/13472 (8%)
+    [95] => [0:07:55] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1139 | Requests: 1139/13472 (8%)
+    [96] => [0:08:00] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1141 | Requests: 1140/13472 (8%)
+    [97] => [0:08:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1165 | Requests: 1173/13472 (8%)
+    [98] => [0:08:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1176 | Requests: 1200/13472 (8%)
+    [99] => [0:08:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1184 | Requests: 1223/13472 (9%)
+    [100] => [0:08:20] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1200 | Requests: 1237/13472 (9%)
+    [101] => [0:08:25] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1206 | Requests: 1245/13472 (9%)
+    [102] => [0:08:30] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1226 | Requests: 1271/13472 (9%)
+    [103] => [0:08:35] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1230 | Requests: 1275/13472 (9%)
+    [104] => [0:08:40] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1246 | Requests: 1287/13472 (9%)
+    [105] => [0:08:45] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1256 | Requests: 1300/13472 (9%)
+    [106] => [0:08:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1297 | Requests: 1321/13472 (9%)
+    [107] => [0:08:55] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1299 | Requests: 1322/13472 (9%)
+    [108] => [0:09:00] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1305 | Requests: 1328/13472 (9%)
+    [109] => [0:09:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1315 | Requests: 1335/13472 (9%)
+    [110] => [0:09:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1347 | Requests: 1363/13472 (10%)
+    [111] => [0:09:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1349 | Requests: 1365/13472 (10%)
+    [112] => [0:09:20] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1353 | Requests: 1367/13472 (10%)
+    [113] => [0:09:25] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1365 | Requests: 1379/13472 (10%)
+    [114] => [0:09:30] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1391 | Requests: 1393/13472 (10%)
+    [115] => [0:09:35] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1397 | Requests: 1400/13472 (10%)
+    [116] => [0:09:40] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1401 | Requests: 1404/13472 (10%)
+    [117] => [0:09:45] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1415 | Requests: 1415/13472 (10%)
+    [118] => [0:09:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1433 | Requests: 1429/13472 (10%)
+    [119] => [0:09:55] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1447 | Requests: 1436/13472 (10%)
+    [120] => [0:10:00] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1449 | Requests: 1441/13472 (10%)
+    [121] => [0:10:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1457 | Requests: 1446/13472 (10%)
+    [122] => [0:10:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1465 | Requests: 1463/13472 (10%)
+    [123] => [0:10:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1495 | Requests: 1487/13472 (11%)
+    [124] => [0:10:20] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1499 | Requests: 1492/13472 (11%)
+    [125] => [0:10:25] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1505 | Requests: 1495/13472 (11%)
+    [126] => [0:10:30] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1515 | Requests: 1499/13472 (11%)
+    [127] => [0:10:35] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1546 | Requests: 1552/13472 (11%)
+    [128] => [0:10:40] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1548 | Requests: 1553/13472 (11%)
+    [129] => [0:10:45] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1555 | Requests: 1555/13472 (11%)
+    [130] => [0:10:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1569 | Requests: 1565/13472 (11%)
+    [131] => [0:10:55] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1597 | Requests: 1592/13472 (11%)
+    [132] => [0:11:00] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1601 | Requests: 1595/13472 (11%)
+    [133] => [0:11:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1607 | Requests: 1603/13472 (11%)
+    [134] => [0:11:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1621 | Requests: 1613/13472 (11%)
+    [135] => [0:11:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1645 | Requests: 1637/13472 (12%)
+    [136] => [0:11:20] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1659 | Requests: 1652/13472 (12%)
+    [137] => [0:11:25] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1665 | Requests: 1659/13472 (12%)
+    [138] => [0:11:30] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1677 | Requests: 1668/13472 (12%)
+    [139] => [0:11:35] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1695 | Requests: 1679/13472 (12%)
+    [140] => [0:11:40] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1705 | Requests: 1691/13472 (12%)
+    [141] => [0:11:45] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1711 | Requests: 1701/13472 (12%)
+    [142] => [0:11:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1725 | Requests: 1715/13472 (12%)
+    [143] => [0:11:55] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1735 | Requests: 1721/13472 (12%)
+    [144] => [0:12:00] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1753 | Requests: 1731/13472 (12%)
+    [145] => [0:12:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1757 | Requests: 1733/13472 (12%)
+    [146] => [0:12:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1769 | Requests: 1749/13472 (12%)
+    [147] => [0:12:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1785 | Requests: 1755/13472 (13%)
+    [148] => [0:12:20] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1803 | Requests: 1774/13472 (13%)
+    [149] => [0:12:25] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1809 | Requests: 1781/13472 (13%)
+    [150] => [0:12:30] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1823 | Requests: 1790/13472 (13%)
+    [151] => [0:12:35] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1833 | Requests: 1805/13472 (13%)
+    [152] => [0:12:40] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1853 | Requests: 1828/13472 (13%)
+    [153] => [0:12:45] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1860 | Requests: 1832/13472 (13%)
+    [154] => [0:12:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1869 | Requests: 1838/13472 (13%)
+    [155] => [0:12:55] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1879 | Requests: 1854/13472 (13%)
+    [156] => [0:13:00] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1899 | Requests: 1870/13472 (13%)
+    [157] => [0:13:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1909 | Requests: 1881/13472 (13%)
+    [158] => [0:13:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1917 | Requests: 1885/13472 (13%)
+    [159] => [0:13:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1935 | Requests: 1900/13472 (14%)
+    [160] => [0:13:20] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1948 | Requests: 1913/13472 (14%)
+    [161] => [0:13:25] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1955 | Requests: 1918/13472 (14%)
+    [162] => [0:13:30] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1965 | Requests: 1926/13472 (14%)
+    [163] => [0:13:35] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1981 | Requests: 1954/13472 (14%)
+    [164] => [0:13:40] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 1995 | Requests: 1970/13472 (14%)
+    [165] => [0:13:45] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2004 | Requests: 1974/13472 (14%)
+    [166] => [0:13:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2014 | Requests: 1981/13472 (14%)
+    [167] => [0:13:55] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2026 | Requests: 1988/13472 (14%)
+    [168] => [0:14:00] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2042 | Requests: 1996/13472 (14%)
+    [169] => [0:14:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2054 | Requests: 2022/13472 (15%)
+    [170] => [0:14:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2056 | Requests: 2023/13472 (15%)
+    [171] => [0:14:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2076 | Requests: 2045/13472 (15%)
+    [172] => [0:14:20] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2088 | Requests: 2059/13472 (15%)
+    [173] => [0:14:25] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2100 | Requests: 2078/13472 (15%)
+    [174] => [0:14:30] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2106 | Requests: 2085/13472 (15%)
+    [175] => [0:14:35] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2120 | Requests: 2102/13472 (15%)
+    [176] => [0:14:40] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2136 | Requests: 2120/13472 (15%)
+    [177] => [0:14:45] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2150 | Requests: 2163/13472 (16%)
+    [178] => [0:14:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2154 | Requests: 2171/13472 (16%)
+    [179] => [0:14:55] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2168 | Requests: 2198/13472 (16%)
+    [180] => [0:15:00] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2180 | Requests: 2219/13472 (16%)
+    [181] => [0:15:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2199 | Requests: 2231/13472 (16%)
+    [182] => [0:15:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2209 | Requests: 2251/13472 (16%)
+    [183] => [0:15:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2223 | Requests: 2272/13472 (16%)
+    [184] => [0:15:20] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2233 | Requests: 2287/13472 (16%)
+    [185] => [0:15:25] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2247 | Requests: 2302/13472 (17%)
+    [186] => [0:15:30] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2259 | Requests: 2310/13472 (17%)
+    [187] => [0:15:35] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2269 | Requests: 2322/13472 (17%)
+    [188] => [0:15:40] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2279 | Requests: 2336/13472 (17%)
+    [189] => [0:15:45] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2291 | Requests: 2369/13472 (17%)
+    [190] => [0:15:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2307 | Requests: 2383/13472 (17%)
+    [191] => [0:15:55] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2313 | Requests: 2388/13472 (17%)
+    [192] => [0:16:00] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2329 | Requests: 2408/13472 (17%)
+    [193] => [0:16:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2362 | Requests: 2436/13472 (18%)
+    [194] => [0:16:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2376 | Requests: 2447/13472 (18%)
+    [195] => [0:16:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2382 | Requests: 2469/13472 (18%)
+    [196] => [0:16:20] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2400 | Requests: 2482/13472 (18%)
+    [197] => [0:16:25] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2430 | Requests: 2492/13472 (18%)
+    [198] => [0:16:30] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2440 | Requests: 2501/13472 (18%)
+    [199] => [0:16:35] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2450 | Requests: 2512/13472 (18%)
+    [200] => [0:16:40] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2466 | Requests: 2532/13472 (18%)
+    [201] => [0:16:45] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2474 | Requests: 2536/13472 (18%)
+    [202] => [0:16:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2486 | Requests: 2543/13472 (18%)
+    [203] => [0:16:55] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2500 | Requests: 2555/13472 (18%)
+    [204] => [0:17:00] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2516 | Requests: 2573/13472 (19%)
+    [205] => [0:17:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2520 | Requests: 2575/13472 (19%)
+    [206] => [0:17:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2536 | Requests: 2592/13472 (19%)
+    [207] => [0:17:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2546 | Requests: 2599/13472 (19%)
+    [208] => [0:17:20] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2556 | Requests: 2609/13472 (19%)
+    [209] => [0:17:25] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2570 | Requests: 2617/13472 (19%)
+    [210] => [0:17:30] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2582 | Requests: 2626/13472 (19%)
+    [211] => [0:17:35] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2598 | Requests: 2645/13472 (19%)
+    [212] => [0:17:40] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2606 | Requests: 2652/13472 (19%)
+    [213] => [0:17:45] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2622 | Requests: 2663/13472 (19%)
+    [214] => [0:17:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2632 | Requests: 2673/13472 (19%)
+    [215] => [0:17:55] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2648 | Requests: 2692/13472 (19%)
+    [216] => [0:18:00] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2654 | Requests: 2695/13472 (20%)
+    [217] => [0:18:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2670 | Requests: 2711/13472 (20%)
+    [218] => [0:18:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2678 | Requests: 2720/13472 (20%)
+    [219] => [0:18:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2690 | Requests: 2732/13472 (20%)
+    [220] => [0:18:20] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2702 | Requests: 2746/13472 (20%)
+    [221] => [0:18:25] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2720 | Requests: 2768/13472 (20%)
+    [222] => [0:18:30] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2724 | Requests: 2774/13472 (20%)
+    [223] => [0:18:35] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2736 | Requests: 2784/13472 (20%)
+    [224] => [0:18:40] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2750 | Requests: 2799/13472 (20%)
+    [225] => [0:18:45] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2770 | Requests: 2812/13472 (20%)
+    [226] => [0:18:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2776 | Requests: 2824/13472 (20%)
+    [227] => [0:18:55] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2786 | Requests: 2836/13472 (21%)
+    [228] => [0:19:00] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2798 | Requests: 2862/13472 (21%)
+    [229] => [0:19:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2812 | Requests: 2874/13472 (21%)
+    [230] => [0:19:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2835 | Requests: 2884/13472 (21%)
+    [231] => [0:19:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2843 | Requests: 2890/13472 (21%)
+    [232] => [0:19:20] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2855 | Requests: 2901/13472 (21%)
+    [233] => [0:19:25] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2867 | Requests: 2915/13472 (21%)
+    [234] => [0:19:30] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2883 | Requests: 2932/13472 (21%)
+    [235] => [0:19:35] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2891 | Requests: 2939/13472 (21%)
+    [236] => [0:19:40] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2905 | Requests: 2950/13472 (21%)
+    [237] => [0:19:45] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2917 | Requests: 2961/13472 (21%)
+    [238] => [0:19:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2933 | Requests: 2978/13472 (22%)
+    [239] => [0:19:55] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2939 | Requests: 2987/13472 (22%)
+    [240] => [0:20:00] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2947 | Requests: 2996/13472 (22%)
+    [241] => [0:20:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2965 | Requests: 3008/13472 (22%)
+    [242] => [0:20:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2977 | Requests: 3021/13472 (22%)
+    [243] => [0:20:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2983 | Requests: 3026/13472 (22%)
+    [244] => [0:20:20] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 2997 | Requests: 3045/13472 (22%)
+    [245] => [0:20:25] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3011 | Requests: 3064/13472 (22%)
+    [246] => [0:20:30] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3023 | Requests: 3071/13472 (22%)
+    [247] => [0:20:35] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3033 | Requests: 3080/13472 (22%)
+    [248] => [0:20:40] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3043 | Requests: 3087/13472 (22%)
+    [249] => [0:20:45] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3055 | Requests: 3107/13472 (23%)
+    [250] => [0:20:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3069 | Requests: 3114/13472 (23%)
+    [251] => [0:20:55] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3083 | Requests: 3123/13472 (23%)
+    [252] => [0:21:00] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3091 | Requests: 3133/13472 (23%)
+    [253] => [0:21:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3103 | Requests: 3150/13472 (23%)
+    [254] => [0:21:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3117 | Requests: 3163/13472 (23%)
+    [255] => [0:21:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3131 | Requests: 3175/13472 (23%)
+    [256] => [0:21:20] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3139 | Requests: 3180/13472 (23%)
+    [257] => [0:21:25] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3153 | Requests: 3187/13472 (23%)
+    [258] => [0:21:30] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3165 | Requests: 3212/13472 (23%)
+    [259] => [0:21:35] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3179 | Requests: 3231/13472 (23%)
+    [260] => [0:21:40] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3185 | Requests: 3239/13472 (24%)
+    [261] => [0:21:45] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3197 | Requests: 3247/13472 (24%)
+    [262] => [0:21:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3227 | Requests: 3262/13472 (24%)
+    [263] => [0:21:55] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3239 | Requests: 3271/13472 (24%)
+    [264] => [0:22:00] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3245 | Requests: 3282/13472 (24%)
+    [265] => [0:22:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3259 | Requests: 3311/13472 (24%)
+    [266] => [0:22:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3273 | Requests: 3328/13472 (24%)
+    [267] => [0:22:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3285 | Requests: 3351/13472 (24%)
+    [268] => [0:22:20] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3295 | Requests: 3363/13472 (24%)
+    [269] => [0:22:25] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3305 | Requests: 3370/13472 (25%)
+    [270] => [0:22:30] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3315 | Requests: 3378/13472 (25%)
+    [271] => [0:22:35] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3331 | Requests: 3438/13472 (25%)
+    [272] => [0:22:40] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3345 | Requests: 3451/13472 (25%)
+    [273] => [0:22:45] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3351 | Requests: 3455/13472 (25%)
+    [274] => [0:22:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3365 | Requests: 3466/13472 (25%)
+    [275] => [0:22:55] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3377 | Requests: 3481/13472 (25%)
+    [276] => [0:23:00] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3391 | Requests: 3493/13472 (25%)
+    [277] => [0:23:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3399 | Requests: 3498/13472 (25%)
+    [278] => [0:23:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3411 | Requests: 3511/13472 (26%)
+    [279] => [0:23:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3425 | Requests: 3526/13472 (26%)
+    [280] => [0:23:20] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3439 | Requests: 3532/13472 (26%)
+    [281] => [0:23:25] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3447 | Requests: 3542/13472 (26%)
+    [282] => [0:23:30] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3455 | Requests: 3553/13472 (26%)
+    [283] => [0:23:35] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3473 | Requests: 3569/13472 (26%)
+    [284] => [0:23:40] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3485 | Requests: 3582/13472 (26%)
+    [285] => [0:23:45] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3495 | Requests: 3590/13472 (26%)
+    [286] => [0:23:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3505 | Requests: 3600/13472 (26%)
+    [287] => [0:23:55] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3521 | Requests: 3617/13472 (26%)
+    [288] => [0:24:00] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3531 | Requests: 3649/13472 (27%)
+    [289] => [0:24:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3545 | Requests: 3662/13472 (27%)
+    [290] => [0:24:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3555 | Requests: 3671/13472 (27%)
+    [291] => [0:24:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3565 | Requests: 3678/13472 (27%)
+    [292] => [0:24:20] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3575 | Requests: 3703/13472 (27%)
+    [293] => [0:24:25] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3616 | Requests: 3726/13472 (27%)
+    [294] => [0:24:30] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3624 | Requests: 3736/13472 (27%)
+    [295] => [0:24:35] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3638 | Requests: 3749/13472 (27%)
+    [296] => [0:24:40] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3656 | Requests: 3757/13472 (27%)
+    [297] => [0:24:45] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3675 | Requests: 3764/13472 (27%)
+    [298] => [0:24:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3691 | Requests: 3778/13472 (28%)
+    [299] => [0:24:55] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3697 | Requests: 3785/13472 (28%)
+    [300] => [0:25:00] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3713 | Requests: 3809/13472 (28%)
+    [301] => [0:25:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3721 | Requests: 3814/13472 (28%)
+    [302] => [0:25:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3737 | Requests: 3839/13472 (28%)
+    [303] => [0:25:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3747 | Requests: 3845/13472 (28%)
+    [304] => [0:25:20] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3761 | Requests: 3856/13472 (28%)
+    [305] => [0:25:25] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3769 | Requests: 3866/13472 (28%)
+    [306] => [0:25:30] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3794 | Requests: 3898/13472 (28%)
+    [307] => [0:25:35] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3804 | Requests: 3911/13472 (29%)
+    [308] => [0:25:40] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3818 | Requests: 3923/13472 (29%)
+    [309] => [0:25:45] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3825 | Requests: 3933/13472 (29%)
+    [310] => [0:25:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3849 | Requests: 3976/13472 (29%)
+    [311] => [0:25:55] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3857 | Requests: 3986/13472 (29%)
+    [312] => [0:26:00] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3870 | Requests: 3994/13472 (29%)
+    [313] => [0:26:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3883 | Requests: 3996/13472 (29%)
+    [314] => [0:26:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3920 | Requests: 4044/13472 (30%)
+    [315] => [0:26:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3927 | Requests: 4049/13472 (30%)
+    [316] => [0:26:20] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3938 | Requests: 4063/13472 (30%)
+    [317] => [0:26:25] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 3948 | Requests: 4077/13472 (30%)
+    [318] => [0:26:30] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 4000 | Requests: 4146/13472 (30%)
+    [319] => [0:26:35] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 4012 | Requests: 4158/13472 (30%)
+    [320] => [0:26:40] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 4018 | Requests: 4161/13472 (30%)
+    [321] => [0:26:45] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 4037 | Requests: 4191/13472 (31%)
+    [322] => [0:26:50] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 4072 | Requests: 4227/13472 (31%)
+    [323] => [0:26:55] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 4105 | Requests: 4239/13472 (31%)
+    [324] => [0:27:00] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 4114 | Requests: 4242/13472 (31%)
+    [325] => [0:27:05] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 4140 | Requests: 4246/13472 (31%)
+    [326] => [0:27:10] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 4148 | Requests: 4248/13472 (31%)
+    [327] => [0:27:15] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 4192 | Requests: 4259/13472 (31%)
+    [328] => [0:27:19] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 4192 | Requests: 4259/13472 (31%)
+    [329] => [0:27:19] | Templates: 7870 | Hosts: 1 | RPS: 2 | Matched: 0 | Errors: 4192 | Requests: 4259/13472 (31%)
+)
+
+[19-Jun-2025 13:48:04 UTC] Script started
+[19-Jun-2025 13:48:04 UTC] Raw input: {"tool":"ping","target":"8.8.8.8"}
+[19-Jun-2025 13:48:04 UTC] Executing command: ping -c 4 '8.8.8.8'
+[19-Jun-2025 13:48:07 UTC] Command return code: 0
+[19-Jun-2025 13:48:07 UTC] Command output: Array
+(
+    [0] => PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+    [1] => 64 bytes from 8.8.8.8: icmp_seq=1 ttl=128 time=4.88 ms
+    [2] => 64 bytes from 8.8.8.8: icmp_seq=2 ttl=128 time=27.5 ms
+    [3] => 64 bytes from 8.8.8.8: icmp_seq=3 ttl=128 time=5.03 ms
+    [4] => 64 bytes from 8.8.8.8: icmp_seq=4 ttl=128 time=4.54 ms
+    [5] => 
+    [6] => --- 8.8.8.8 ping statistics ---
+    [7] => 4 packets transmitted, 4 received, 0% packet loss, time 3005ms
+    [8] => rtt min/avg/max/mdev = 4.542/10.486/27.494/9.821 ms
+)
+
+[19-Jun-2025 13:48:26 UTC] Script started
+[19-Jun-2025 13:48:26 UTC] Raw input: {"tool":"nikto","target":"www.supdevinci.fr"}
+[19-Jun-2025 13:48:26 UTC] Executing command: nikto -h 'www.supdevinci.fr'
+[19-Jun-2025 13:49:36 UTC] Command return code: 0
+[19-Jun-2025 13:49:36 UTC] Command output: Array
+(
+    [0] => - Nikto v2.1.5
+    [1] => ---------------------------------------------------------------------------
+    [2] => + Target IP:          51.75.130.27
+    [3] => + Target Hostname:    www.supdevinci.fr
+    [4] => + Target Port:        80
+    [5] => + Start Time:         2025-06-19 15:48:27 (GMT2)
+    [6] => ---------------------------------------------------------------------------
+    [7] => + Server: Apache
+    [8] => + The anti-clickjacking X-Frame-Options header is not present.
+    [9] => + Root page / redirects to: https://www.supdevinci.fr/
+    [10] => + No CGI Directories found (use '-C all' to force check all possible dirs)
+    [11] => + Server leaks inodes via ETags, header found with file /, fields: 0x3 0x619808d9ef5ba
+    [12] => + Uncommon header 'referrer-policy' found, with contents: strict-origin
+    [13] => + Uncommon header 'strict-transport-security' found, with contents: max-age=63072000; includeSubdomains; preload
+    [14] => + Uncommon header 'x-content-type-options' found, with contents: nosniff
+    [15] => + Uncommon header 'x-xss-protection' found, with contents: 1; mode=block
+    [16] => + OSVDB-3931: /myphpnuke/links.php?op=search&query=[script]alert('Vulnerable);[/script]?query=: myphpnuke is vulnerable to Cross Site Scripting (XSS). http://www.cert.org/advisories/CA-2000-02.html.
+    [17] => + OSVDB-3931: /myphpnuke/links.php?op=MostPopular&ratenum=[script]alert(document.cookie);[/script]&ratetype=percent: myphpnuke is vulnerable to Cross Site Scripting (XSS). http://www.cert.org/advisories/CA-2000-02.html.
+    [18] => + /modules.php?letter=%22%3E%3Cimg%20src=javascript:alert(document.cookie);%3E&op=modload&name=Members_List&file=index: Post Nuke 0.7.2.3-Phoenix is vulnerable to Cross Site Scripting (XSS). http://www.cert.org/advisories/CA-2000-02.html.
+    [19] => + 6544 items checked: 0 error(s) and 9 item(s) reported on remote host
+    [20] => + End Time:           2025-06-19 15:49:36 (GMT2) (69 seconds)
+    [21] => ---------------------------------------------------------------------------
+    [22] => + 1 host(s) tested
+)
+
+[19-Jun-2025 13:50:36 UTC] Script started
+[19-Jun-2025 13:50:36 UTC] Raw input: {"tool":"dig","target":"www.supdevinci.fr"}
+[19-Jun-2025 13:50:36 UTC] Executing command: dig 'www.supdevinci.fr'
+[19-Jun-2025 13:50:36 UTC] Command return code: 0
+[19-Jun-2025 13:50:36 UTC] Command output: Array
+(
+    [0] => 
+    [1] => ; <<>> DiG 9.18.33-1~deb12u2-Debian <<>> www.supdevinci.fr
+    [2] => ;; global options: +cmd
+    [3] => ;; Got answer:
+    [4] => ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 50812
+    [5] => ;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+    [6] => 
+    [7] => ;; OPT PSEUDOSECTION:
+    [8] => ; EDNS: version: 0, flags:; MBZ: 0x0005, udp: 4096
+    [9] => ;; QUESTION SECTION:
+    [10] => ;www.supdevinci.fr.		IN	A
+    [11] => 
+    [12] => ;; ANSWER SECTION:
+    [13] => www.supdevinci.fr.	5	IN	A	51.75.130.27
+    [14] => 
+    [15] => ;; Query time: 3 msec
+    [16] => ;; SERVER: 192.168.44.2#53(192.168.44.2) (UDP)
+    [17] => ;; WHEN: Thu Jun 19 15:50:36 CEST 2025
+    [18] => ;; MSG SIZE  rcvd: 62
+    [19] => 
+)
+
+[19-Jun-2025 13:50:36 UTC] Script started
+[19-Jun-2025 13:50:36 UTC] Raw input: {"tool":"ping","target":"www.supdevinci.fr"}
+[19-Jun-2025 13:50:36 UTC] Executing command: ping -c 4 'www.supdevinci.fr'
+[19-Jun-2025 13:50:39 UTC] Command return code: 0
+[19-Jun-2025 13:50:39 UTC] Command output: Array
+(
+    [0] => PING www.supdevinci.fr (51.75.130.27) 56(84) bytes of data.
+    [1] => 64 bytes from ns3131900.ip-51-75-130.eu (51.75.130.27): icmp_seq=1 ttl=128 time=14.2 ms
+    [2] => 64 bytes from ns3131900.ip-51-75-130.eu (51.75.130.27): icmp_seq=2 ttl=128 time=25.3 ms
+    [3] => 64 bytes from ns3131900.ip-51-75-130.eu (51.75.130.27): icmp_seq=3 ttl=128 time=20.8 ms
+    [4] => 64 bytes from ns3131900.ip-51-75-130.eu (51.75.130.27): icmp_seq=4 ttl=128 time=10.9 ms
+    [5] => 
+    [6] => --- www.supdevinci.fr ping statistics ---
+    [7] => 4 packets transmitted, 4 received, 0% packet loss, time 3005ms
+    [8] => rtt min/avg/max/mdev = 10.871/17.791/25.304/5.614 ms
+)
+
+[19-Jun-2025 13:51:45 UTC] Script started
+[19-Jun-2025 13:51:45 UTC] Raw input: {"tool":"whatweb","target":"www.supdevinci.fr"}
+[19-Jun-2025 13:51:45 UTC] Invalid tool specified: whatweb
